@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>The WNY Listening Post — Sunday, May 10, 2026 — A.M. Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  body { margin: 0; padding: 0; background: #d9d4cb; color: #000; font-family: Georgia, "Times New Roman", serif; }
+  .page { max-width: 1180px; margin: 0 auto; background: #fff; box-shadow: 0 0 24px rgba(0,0,0,.18); }
+  /* Weather strip */
+  .weather { background:#1a1a1a; color:#f0f0f0; font-family: 'Oswald', Arial, sans-serif; font-size:13px; padding:8px 16px; display:flex; justify-content:space-around; align-items:center; border-bottom:1px solid #D40000; }
+  .weather strong { color:#c41e1e; letter-spacing:1px; }
+  .weather .pipe { color:#444; }
+  /* Masthead */
+  .masthead-red { background: #D40000; color: #fff; padding: 12px 24px 6px 24px; text-align: center; border-top: 6px solid #000; }
+  .masthead-red h1 { font-family: 'Anton','Bebas Neue', Impact, 'Arial Black', sans-serif; font-size: 96px; line-height: 0.85; margin: 0; letter-spacing: 2px; font-style: italic; text-transform: uppercase; }
+  .masthead-red .small-kicker { font-family: 'Oswald', Arial, sans-serif; font-size: 12px; letter-spacing: 6px; text-transform: uppercase; padding-top: 6px; }
+  .masthead-black { background: #000; color: #fff; padding: 8px 24px; font-family: 'Oswald', Arial, sans-serif; font-size: 13px; letter-spacing: 2px; text-transform: uppercase; display: flex; justify-content: space-between; align-items: center; }
+  .masthead-black .center { font-weight: 700; }
+  .tagline { background: #fff; padding: 6px 24px 12px 24px; text-align: center; font-style: italic; font-size: 14px; color: #444; border-bottom: 4px double #000; }
+
+  /* Tier Alpha hidden when no hits */
+
+  /* WATCHLIST/REGIONAL BREAKING/Tier 2/Tier 4/Tier 3 layout */
+  .layout { display: grid; grid-template-columns: 2fr 1fr; gap: 24px; padding: 24px; }
+  .main-col { min-width: 0; }
+  .sidebar { min-width: 0; }
+
+  /* Section headers */
+  .section-head { background: #000; color: #fff; padding: 10px 14px; border-left: 8px solid #D40000; font-family: 'Anton','Bebas Neue',Impact,sans-serif; font-size: 28px; letter-spacing: 2px; text-transform: uppercase; margin: 28px 0 14px 0; line-height: 1; }
+  .section-head .sub { display: block; font-family: 'Oswald', Arial, sans-serif; font-size: 11px; letter-spacing: 3px; color: #D40000; padding-top: 4px; font-weight: 400; }
+  .section-head:first-child { margin-top: 0; }
+
+  /* Story block */
+  .story { padding-bottom: 18px; margin-bottom: 18px; border-bottom: 1px solid #ccc; }
+  .story:last-child { border-bottom: none; }
+  .kicker { font-family: 'Oswald', Arial, sans-serif; font-size: 11px; letter-spacing: 3px; color: #D40000; font-weight: 700; text-transform: uppercase; }
+  .story h2 { font-family: 'Anton','Bebas Neue',Impact,sans-serif; text-transform: uppercase; font-size: 36px; line-height: 1; margin: 4px 0 8px 0; letter-spacing: 1px; }
+  .story h2.big { font-size: 48px; }
+  .story h2.medium { font-size: 32px; }
+  .story h3 { font-family: 'Anton','Bebas Neue',Impact,sans-serif; text-transform: uppercase; font-size: 24px; line-height: 1.05; margin: 4px 0 6px 0; letter-spacing: 1px; }
+  .subhead { font-style: italic; font-size: 16px; color: #333; margin-bottom: 8px; }
+  .story p { font-size: 15px; line-height: 1.5; margin: 6px 0; }
+  .meta { font-family: 'Oswald', Arial, sans-serif; font-size: 11px; letter-spacing: 1px; color: #777; text-transform: uppercase; }
+  sup { color: #D40000; font-weight: 700; font-size: 10px; }
+
+  /* Sidebar boxes */
+  .box { background: #f4f1ec; border-top: 6px solid #D40000; padding: 14px 16px 16px 16px; margin-bottom: 22px; }
+  .box h3 { font-family: 'Anton','Bebas Neue',Impact,sans-serif; text-transform: uppercase; margin: 0 0 8px 0; font-size: 24px; letter-spacing: 1px; color: #000; line-height: 1; }
+  .box p { font-size: 13px; line-height: 1.5; margin: 4px 0; }
+  .box ul { padding: 0; margin: 0; list-style: none; }
+  .box li { padding: 8px 0; border-bottom: 1px dotted #aaa; font-family: 'Oswald', Arial, sans-serif; font-size: 13px; line-height: 1.4; }
+  .box li:last-child { border-bottom: none; }
+  .box li a { color: #000; text-decoration: none; }
+  .box li a:hover { color: #D40000; }
+  .box li .teaser-head { font-weight: 700; text-transform: uppercase; color: #D40000; display: block; font-size: 13px; letter-spacing: 1px; }
+  .box li .teaser-body { font-family: Georgia, serif; font-style: italic; color: #222; font-size: 13px; }
+
+  .overheard-box { border-top: 8px double #D40000; }
+  .overheard-box h3 { font-size: 28px; }
+  .gem-box blockquote { font-family: Georgia, serif; font-style: italic; font-size: 17px; line-height: 1.4; margin: 0; color: #000; border-left: 4px solid #D40000; padding-left: 12px; }
+  .gem-box .gem-attr { font-family: 'Oswald', Arial, sans-serif; font-size: 11px; letter-spacing: 2px; color: #D40000; text-transform: uppercase; padding-top: 6px; }
+
+  .bynumbers ul { list-style: none; padding: 0; margin: 0; }
+  .bynumbers li { font-family: 'Oswald', Arial, sans-serif; font-size: 13px; padding: 5px 0; border-bottom: 1px dotted #aaa; display: flex; justify-content: space-between; }
+  .bynumbers li:last-child { border-bottom: none; }
+  .bynumbers li strong { color: #D40000; }
+
+  /* Tier 4 main column section */
+  .overheard-main .story h2 { color: #D40000; font-size: 32px; }
+  .overheard-main .story { padding-bottom: 14px; margin-bottom: 14px; }
+
+  /* Compressed Other Calls of Note */
+  .blotter-bullets { padding: 0; margin: 8px 0 0 0; list-style: none; }
+  .blotter-bullets li { font-family: Georgia, serif; font-size: 14px; padding: 6px 0; border-bottom: 1px dotted #ccc; }
+  .blotter-bullets li:last-child { border-bottom: none; }
+  .blotter-bullets .time { font-family: 'Oswald', Arial, sans-serif; font-size: 11px; color: #D40000; letter-spacing: 1px; padding-right: 6px; }
+
+  /* Sources */
+  .sources { background: #1a1a1a; color: #ddd; padding: 22px 26px; margin: 0 0 0 0; }
+  .sources h2 { color: #fff; font-family: 'Anton','Bebas Neue',Impact,sans-serif; text-transform: uppercase; font-size: 26px; letter-spacing: 2px; margin: 0 0 12px 0; border-bottom: 2px solid #D40000; padding-bottom: 6px; }
+  .sources ol { font-family: 'Consolas', 'Monaco', monospace; font-size: 11px; line-height: 1.5; padding-left: 28px; color: #ddd; }
+  .sources ol li { margin-bottom: 3px; word-break: break-all; }
+  .sources sub { color: #D40000; }
+
+  /* Footer */
+  .footer { background: #000; color: #aaa; padding: 18px 26px; font-family: 'Oswald', Arial, sans-serif; font-size: 11px; letter-spacing: 1px; text-transform: uppercase; text-align: center; line-height: 1.6; }
+  .footer .disclaim { color: #777; font-size: 10px; padding-top: 6px; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- Weather strip -->
+  <div class="weather">
+    <span><strong>TODAY</strong>&nbsp;&nbsp;56&deg; / 39&deg;&nbsp;&nbsp;&#x1F327;&#xFE0F; Slight Chance Showers, then Sunny</span>
+    <span class="pipe">&#9474;</span>
+    <span><strong>MON</strong>&nbsp;&nbsp;54&deg; / 35&deg;&nbsp;&nbsp;&#x26C5; Partly Sunny</span>
+    <span class="pipe">&#9474;</span>
+    <span><strong>TUE</strong>&nbsp;&nbsp;57&deg; / 46&deg;&nbsp;&nbsp;&#x2600;&#xFE0F; Frost, then Sunny</span>
+  </div>
+
+  <!-- Masthead -->
+  <div class="masthead-red">
+    <div class="small-kicker">&mdash; Western New York&rsquo;s Tabloid of Record &mdash;</div>
+    <h1>THE WNY LISTENING POST</h1>
+  </div>
+  <div class="masthead-black">
+    <span>VOL. I &middot; NO. AM</span>
+    <span class="center">SUNDAY, MAY 10, 2026 &mdash; A.M. EDITION &middot; WINDOW 15:00 &rarr; 07:00</span>
+    <span>WILLIAMSVILLE, NY</span>
+  </div>
+  <div class="tagline">Sixteen hours of trouble, sifted before sunrise. Mother&rsquo;s Day, by the radio.</div>
+
+  <!-- Body layout -->
+  <div class="layout">
+
+    <!-- MAIN COLUMN -->
+    <div class="main-col">
+
+      <!-- AROUND THE NEIGHBORHOOD (Tier 2) -->
+      <div class="section-head">Around the Neighborhood<span class="sub">Williamsville &middot; Clarence &middot; Amherst proper</span></div>
+
+      <div class="story">
+        <div class="kicker">Developing &middot; KFC</div>
+        <h2 class="big">Ex-Boyfriend, an Ultimatum, and a White Hyundai</h2>
+        <div class="subhead">Female caller at the North Bailey KFC tells Amherst dispatch her ex is en route &mdash; and he&rsquo;s done it before.</div>
+        <p>At <span class="meta">22:55</span> Saturday, Amherst PD was sent to a domestic in progress at the KFC at <strong>3962 North Bailey Avenue</strong>. The caller said her ex-boyfriend was on the way to &ldquo;beat her up,&rdquo; that the last time she&rsquo;d called he had in fact shown up, and that he was likely arriving in a white Hyundai SUV &mdash; previously seen as Lincoln-X-ray-Henry 3840, a rental.<sup>[1][2]</sup> Both parties were noted as &ldquo;negative to the no-fees,&rdquo; and last time, the dispatcher said, he caused property damage. Officers cleared after about fifteen minutes; no on-air arrest.</p>
+      </div>
+
+      <div class="story">
+        <div class="kicker">Domestic &middot; 462 Emerson</div>
+        <h3>Officer Ten-Sevens, Then a Late Domestic Drops</h3>
+        <p>Just as a unit was about to go off duty at <span class="meta">21:29</span>, an Amherst PD supervisor cut in &mdash; &ldquo;Sorry I gotta do this to you before you&rsquo;re 10-7, but I got a domestic. 462 Emerson.&rdquo;<sup>[3]</sup> A short while later, units traded officer-safety notes for a service that had &ldquo;domestics and 945s&rdquo; on file.<sup>[4]</sup></p>
+      </div>
+
+      <div class="story">
+        <div class="kicker">Boulevard Mall</div>
+        <h3>Female in Custody at the Target on the Boulevard</h3>
+        <p>Amherst PD dispatched a cover unit to <strong>Target, 1575 the Boulevard</strong>, at <span class="meta">19:07</span>, for a female in custody. The on-air log shows three plate runs in quick succession.<sup>[5]</sup> Routine retail-theft pattern; no escalation.</p>
+      </div>
+
+      <div class="story">
+        <div class="kicker">Three-Car &middot; Main Street</div>
+        <h3>Three-Car &ldquo;Pedial&rdquo; Crash in Front of 3500 Main</h3>
+        <p>At <span class="meta">18:55</span>, a unit asked dispatch to &ldquo;check on the three-car [pedial] accident in front of 3500 [Main]&rdquo;<sup>[6]</sup> &mdash; near Eggert/3500 Main in Snyder. No injuries broadcast on the air; parties were exchanging information minutes later.</p>
+      </div>
+
+      <div class="story">
+        <div class="kicker">Williamsville EMS</div>
+        <h3>Female Down in the 5010 Main Street Parking Lot</h3>
+        <p>Amherst Fire dispatched Snyder 7 and AMR to <strong>5010 Main Street</strong> at <span class="meta">15:11</span> &mdash; female fell in the parking lot, trouble breathing, with an interpreter named Jonathan brought into the call.<sup>[7][8]</sup> Crews on location investigating; no transport priority broadcast.</p>
+      </div>
+
+      <div class="story">
+        <div class="kicker">Brompton Heights</div>
+        <h3>Snyder 7 Resets a Stubborn Smoke Head</h3>
+        <p>Amherst Fire was sent to a commercial fire-alarm activation at <strong>Brompton Heights, 275 Brompton Road</strong>, at <span class="meta">15:10</span>.<sup>[9]</sup> Within five minutes, dispatch confirmed the &ldquo;activated head&rdquo; and cleared the building for reset.<sup>[10]</sup> A second alarm activation followed at <strong>100 Maple Road</strong> in &ldquo;Gratzville&rdquo; (Getzville) for a smoke detector &mdash; same outcome.<sup>[11]</sup></p>
+      </div>
+
+      <div class="story">
+        <div class="kicker">Amberwood</div>
+        <h3>E-Bike Speeders Buzz the Cul-de-Sac</h3>
+        <p>An Amherst PD unit asked another car at <span class="meta">18:44</span> to &ldquo;take a ride through 123 Amberwood for the kids that are on their e-bikes speeding around.&rdquo;<sup>[12]</sup> Patrol acknowledged. The kids, presumably, dispersed.</p>
+      </div>
+
+      <div class="story">
+        <div class="kicker">Garden Parkway</div>
+        <h3>Williamsville Roll-Out Before Dawn</h3>
+        <p>Williamsville (FD) and Twin City Ambulance handled a 71-year-old EMS call at <strong>260 Garden Parkway</strong> at <span class="meta">05:54</span>. Patient went with TCA to an unknown disposition; Williamsville back in service by 06:14.<sup>[13][14]</sup></p>
+      </div>
+
+
+      <!-- OVERHEARD: THE WIRES (Tier 4) -->
+      <div class="section-head">Overheard: The Wires<span class="sub">The day&rsquo;s strange, funny, and fully human radio</span></div>
+
+      <div class="overheard-main">
+
+        <div class="story" id="overheard-1">
+          <div class="kicker">What the&hellip;?!</div>
+          <h2 class="big">&ldquo;Nobody Can See It Because Somebody Hit a Rocket Launcher&rdquo;</h2>
+          <div class="subhead">An Embassy Suites shuttle dispatcher in Niagara Falls explains, with great calm, why the men&rsquo;s room is presently invisible.</div>
+          <p>At <span class="meta">15:07</span> on the Niagara Region trunk &mdash; a channel that, read end-to-end, is unmistakably the casino-strip hotel-shuttle pool (Embassy, Hyatt, Wyndham, Doubletree, Ramada, with a supervisor named Lee and a driver named Brenda) &mdash; an unflustered Embassy Control answered a question about whether there was a men&rsquo;s room with the immortal line: &ldquo;The men&rsquo;s one is there, but nobody can see it because somebody hit a rocket launcher.&rdquo;<sup>[15]</sup> Whatever was actually struck, it almost certainly was not a rocket launcher. We are choosing to believe.</p>
+        </div>
+
+        <div class="story" id="overheard-2">
+          <div class="kicker">Cowboy in the Driveway</div>
+          <h2 class="medium">Highly Intoxicated, Urinated on Himself, Wanted to Go Driving</h2>
+          <p>An Amherst PD unit, briefing his cover at <span class="meta">19:56</span>, summarized the night&rsquo;s most fully realized character: &ldquo;He was highly intoxicated and urinated on himself, mentioned wanting to go driving. We do have history with that male that lives there &mdash; Gary [Filbert] &mdash; 10-18 issues. White male in his 60s, wearing a cowboy hat and a leather jacket. Silver Mercedes in the driveway.&rdquo;<sup>[16]</sup> The shift commander asked if there was a complaint at all on the patient. Negative. &ldquo;That&rsquo;ll work.&rdquo;</p>
+        </div>
+
+        <div class="story" id="overheard-3">
+          <div class="kicker">Buffalo Limo</div>
+          <h2 class="medium">Rhonda, the Gray Sweatsuit, and the Knife</h2>
+          <p>Buffalo Limo&rsquo;s dispatch repeater at <span class="meta">15:40</span> aired the kind of caller summary you do not forget: &ldquo;Male says there was a female that was menacing him with a knife. First name is Rhonda. Black female, wearing an all-gray sweatsuit. Driving a gray Equinox. The male thinks that she might be in the area.&rdquo;<sup>[17]</sup> Rhonda was not located in the radio window; her gray-on-gray-on-gray Equinox got away clean.</p>
+        </div>
+
+        <div class="story" id="overheard-4">
+          <div class="kicker">The Parking-Spot Confessional</div>
+          <h2 class="medium">&ldquo;I Know Who It Is, But I&rsquo;m Not a Snitch&rdquo;</h2>
+          <p>The afternoon&rsquo;s most quoted voice was a TPS BNIA Shuttle driver &mdash; the off-airport remote-parking pool that lives on the Businesses trunk &mdash; running long, pre-Mother&rsquo;s Day, philosophical conversations with a colleague named Joe and another named Chris while waiting on inbound flights. Highlights, in air order:</p>
+          <p style="font-style:italic; font-size:14px; line-height:1.6;">&ldquo;Hey, not to ask a silly question, but is that Russia-Korea thing still going on?&rdquo;<sup>[18]</sup> &nbsp;&middot;&nbsp; &ldquo;I stopped watching the news, Chris &mdash; it&rsquo;s so depressing. And you don&rsquo;t know what to believe.&rdquo;<sup>[19]</sup> &nbsp;&middot;&nbsp; &ldquo;And 250 people are losing their jobs, and he&rsquo;s out there playing Beatles songs.&rdquo;<sup>[20]</sup> &nbsp;&middot;&nbsp; &ldquo;He&rsquo;s definitely gonna be impunctual.&rdquo;<sup>[21]</sup> &nbsp;&middot;&nbsp; &ldquo;Yeah, it was probably one of the overnight guys before they came in to clean the buses. I know who it is, but I&rsquo;m not a snitch.&rdquo;<sup>[22]</sup></p>
+          <p>The clock at the bottom of the parking lot, the driver also volunteers, runs forty-five seconds behind the light at the 33: &ldquo;If you pay attention, that right to our left by the 33, once that turns red&hellip; forty-five seconds after that.&rdquo;<sup>[23]</sup> Twelve cups of coffee in. He likes the clock.</p>
+        </div>
+
+        <div class="story" id="overheard-5">
+          <div class="kicker">Mother&rsquo;s Day Net</div>
+          <h2 class="medium">FRS Channel 16, Western New York, 2026</h2>
+          <p>From <span class="meta">20:01</span> until past <span class="meta">22:00</span>, FRS 16 (the unlicensed handheld band, transmits maybe a half-mile) carried what unmistakably reads as a small ham/CB-style net rolling check-ins. Call signs &ldquo;WSAB 61,&rdquo; &ldquo;WSL 925,&rdquo; &ldquo;Kilo X-ray 607.&rdquo; The president of the net is fielding gifts: &ldquo;It&rsquo;s a Mother&rsquo;s Day present, so it&rsquo;s going to be an early one.&rdquo;<sup>[24]</sup> Someone offers a cocktail to a regular: &ldquo;Want a cocktail, Matt?&rdquo;<sup>[25]</sup> Another voice quietly explains his evening: &ldquo;I&rsquo;ve been close to the radio, man. I&rsquo;ve been doing some crap over at the big house. But, yeah&hellip; I got no wife, I got no, uh&hellip;&rdquo;<sup>[26]</sup> Twelve cups of coffee, again. They were hammering forward and driving forward.</p>
+        </div>
+
+        <div class="story" id="overheard-6">
+          <div class="kicker">Ungulates</div>
+          <h2 class="medium">&ldquo;Horses Out.&rdquo;</h2>
+          <p>The first transmission of the listening window, <span class="meta">15:03</span>, Amherst PD: &ldquo;Horses out.&rdquo;<sup>[27]</sup> No address, no follow-up, no further detail. Sound 4-4. Eleven hours of normal radio after that, and somewhere out there, two horses still out.</p>
+        </div>
+
+        <div class="story" id="overheard-7">
+          <div class="kicker">Sign-Offs</div>
+          <h2 class="medium">Niagara County Fire Control&rsquo;s Most Niagara County Goodbye</h2>
+          <p>A NC Fire Control dispatcher cleared an ambulance after the Niagara Falls MVA dispatch (see Regional Blotter, below), in the middle of triaging a CPR-in-progress: &ldquo;Loading at 2-4, Control. &mdash; Love and hate you.&rdquo;<sup>[28]</sup> A Cheektowaga Fire dispatcher signed a unit back in service four hours later with: &ldquo;I know you&rsquo;re baking.&rdquo;<sup>[29]</sup> The voice of public safety, after midnight, is mostly tired and a little fond.</p>
+        </div>
+
+      </div>
+
+      <!-- REGIONAL BLOTTER (Tier 3) -->
+      <div class="section-head">Regional Blotter<span class="sub">WNY-wide, Saturday afternoon to Sunday morning</span></div>
+
+      <div class="story">
+        <div class="kicker">Niagara Falls &middot; MVA</div>
+        <h3>Three Injured at 19th &amp; Tyne; CPR Reported in Progress</h3>
+        <p>At <span class="meta">18:53</span> Niagara County Fire Control delayed Tally EMS into Niagara Falls for a motor-vehicle accident at <strong>19th and Tyne Streets</strong>, &ldquo;report of three injured, CPR in progress.&rdquo;<sup>[30]</sup> A follow-up dispatch sent Niagara Falls FD on tactical channel 2.<sup>[31]</sup> No further on-air confirmation of fatalities in the listening window.</p>
+      </div>
+
+      <div class="story">
+        <div class="kicker">Buffalo &middot; BOLO</div>
+        <h3>Confirmed Shooting; BOLO for a Gray Jeep Cherokee</h3>
+        <p>Just before <span class="meta">01:00</span> Sunday, Amherst PD relayed a Buffalo bulletin: &ldquo;Be on the lookout for Buffalo, confirmed shooting, looking for Lincoln-Boy Union 4863 &mdash; 2013 gray Jeep Grand Cherokee.&rdquo;<sup>[32]</sup> No further on-air contact in the window.</p>
+      </div>
+
+      <div class="story">
+        <div class="kicker">Cheektowaga &middot; Mental Hygiene</div>
+        <h3>Subject Flagged Schizophrenic and Possibly Violent</h3>
+        <p>A Cheektowaga PD officer at <span class="meta">00:16</span> warned cover units that a subject (first name Ashley, given on the radio) &ldquo;can become violent, schizophrenic, but he is negative&rdquo; on the warrant check.<sup>[33]</sup> Routine call, atypical caution; no on-air force.</p>
+      </div>
+
+      <div class="story">
+        <div class="kicker">Buffalo &middot; Gas Leak</div>
+        <h3>Food Truck Reportedly Leaking on North Pearl</h3>
+        <p>Buffalo Fire dispatched a Level 2 response at <span class="meta">17:25</span> to <strong>35 North Street</strong> between North Pearl and Linwood &mdash; a reported gas leak coming from a food truck.<sup>[34]</sup> A separate natural-gas call hit BFD at <span class="meta">00:44</span> at <strong>15 Grove Street</strong>, lower floor; Ladder 13 in.<sup>[35]</sup></p>
+      </div>
+
+      <div class="story">
+        <div class="kicker">Niagara County &middot; Tree Down</div>
+        <h3>Tree and Power Lines Across the Roadway in Pendleton</h3>
+        <p>NC Fire Control dispatched Miller Hose with utility-equipment request to <strong>Tweed Hill Crescent off Main Street</strong> at <span class="meta">18:50</span> for a tree and power lines down.<sup>[36]</sup> Earlier, a separate call sent crews to <strong>Alcott Road</strong> for tree-down with possible downed wires; Air Patrol on location.<sup>[37]</sup> No power-outage figure broadcast in the window.</p>
+      </div>
+
+      <h3 style="font-family: 'Anton','Bebas Neue',Impact,sans-serif; text-transform:uppercase; letter-spacing:1px; font-size:18px; margin: 18px 0 8px 0; color:#000; border-bottom: 2px solid #D40000; padding-bottom:4px;">Other Calls of Note</h3>
+      <ul class="blotter-bullets">
+        <li><span class="time">[15:52]</span> Amherst Fire &mdash; commercial fire-alarm activation, 100 Maple Road, &ldquo;Gratzville&rdquo; (Getzville). Smoke-detector activation only.<sup>[11]</sup></li>
+        <li><span class="time">[18:38]</span> Buffalo Fire &mdash; Level-2 commercial alarm at <strong>83 Bryant</strong> between Linwood and Delaware. Avoidable alarm.<sup>[38]</sup></li>
+        <li><span class="time">[18:48]</span> Buffalo Fire &mdash; commercial alarm <strong>671 Grant</strong>, Buff State Student Housing Building 54. Campus security reported &ldquo;fine hair on room 30&rdquo; (sic, transcript noisy); reset.<sup>[39]</sup></li>
+        <li><span class="time">[19:53]</span> Buffalo Fire &mdash; preliminary signal, commercial alarm Level 2, <strong>959 Broadway</strong> between Fillmore and Gibson; nothing showing, picked up.<sup>[40]</sup></li>
+        <li><span class="time">[19:32]</span> Hamburg FD &mdash; tree across the roadway at <strong>6941 Boston Cross Road</strong> between Smolenski and Boston State Road; held in quarters after.<sup>[41]</sup></li>
+        <li><span class="time">[19:51]</span> Hamburg FD &mdash; 87-year-old female, difficulty breathing, traumatic response, Amber Park.<sup>[42]</sup></li>
+        <li><span class="time">[18:17]</span> NC Fire Control &mdash; 94-year-old female, abdominal pain with possible UTI, experiencing delirium, Berkholz Center.<sup>[43]</sup></li>
+        <li><span class="time">[20:06]</span> NC Fire Control &mdash; Lewis 130, EMS 345 North 5th Street, Niagara Falls; 69-year-old female fell down stairs, partly unconscious, breathing.<sup>[44]</sup></li>
+        <li><span class="time">[18:28]</span> Lockport &mdash; 8-year-old male with eye-burning and blurred vision, 262 Garden Street.<sup>[45]</sup></li>
+        <li><span class="time">[19:44]</span> NC Fire Control &mdash; routine response to 3979 Forest Parkway.<sup>[46]</sup></li>
+        <li><span class="time">[21:22]</span> Olean PD/FD &mdash; reported hazmat gas spill inside residence at <strong>6345 Powers Road</strong>; occupants attempted to clean it up, &ldquo;unsure if it&rsquo;s done correctly.&rdquo;<sup>[47]</sup></li>
+        <li><span class="time">[21:15]</span> BPD Ch 3 (Buffalo schools/Charlie Towers) &mdash; gun call from a young caller hiding in the back yard, partial subject description on the air.<sup>[48]</sup></li>
+        <li><span class="time">[20:11]</span> Evans PD &mdash; Transit has the vehicle; standby unit nearby.<sup>[49]</sup></li>
+        <li><span class="time">[18:39]</span> Buffalo Schools &mdash; report of &ldquo;over 300 student cards that are not working&rdquo; at the simulcast tower.<sup>[50]</sup></li>
+      </ul>
+
+    </div>
+
+    <!-- SIDEBAR -->
+    <div class="sidebar">
+
+      <div class="box">
+        <h3>Editor&rsquo;s Note</h3>
+        <p>Mother&rsquo;s Day eve and a steady, talky window: 1,973 segments across 29 systems, dominated as always by Amherst-Clarence (757). The neighborhood drumbeat was unremarkable &mdash; one pre-dawn EMS run on Garden Parkway, a clutch of Snyder fire-alarm activations, a familiar KFC domestic on North Bailey. The longer transmissions came from people with nowhere to be: a Niagara Falls hotel-shuttle dispatcher describing a vandalized restroom, an Amherst FRS net checking in for Mother&rsquo;s Day, and a TPS airport-shuttle driver philosophizing about cable news between flights. The hour with the most traffic was the 19:00 block (220 segments).</p>
+      </div>
+
+      <div class="box overheard-box">
+        <h3>Overheard Highlights</h3>
+        <ul>
+          <li><a href="#overheard-1"><span class="teaser-head">Rocket Launcher in the Men&rsquo;s Room</span><span class="teaser-body">Niagara Falls hotel dispatch explains everything except the rocket launcher.</span></a></li>
+          <li><a href="#overheard-2"><span class="teaser-head">Cowboy Hat, Silver Mercedes, Wanted to Go Driving</span><span class="teaser-body">Amherst PD describes a 60s-something character study in one transmission.</span></a></li>
+          <li><a href="#overheard-3"><span class="teaser-head">Rhonda &amp; the Gray Equinox</span><span class="teaser-body">Buffalo Limo dispatch puts out an ATL with full color palette.</span></a></li>
+          <li><a href="#overheard-4"><span class="teaser-head">&ldquo;I&rsquo;m Not a Snitch&rdquo;</span><span class="teaser-body">A TPS BNIA shuttle driver workshops his world-view between flights.</span></a></li>
+          <li><a href="#overheard-6"><span class="teaser-head">Horses Out</span><span class="teaser-body">First transmission of the window, no follow-up.</span></a></li>
+        </ul>
+      </div>
+
+      <div class="box gem-box">
+        <h3>Daily Gem</h3>
+        <blockquote>&ldquo;The men&rsquo;s one is there, but nobody can see it because somebody hit a rocket launcher.&rdquo;</blockquote>
+        <div class="gem-attr">&mdash; Embassy Control, Niagara Region trunk, 15:07</div>
+      </div>
+
+      <div class="box bynumbers">
+        <h3>By the Numbers</h3>
+        <ul>
+          <li><span>Total segments</span><strong>1,973</strong></li>
+          <li><span>Active systems</span><strong>29</strong></li>
+          <li><span>Busiest hour</span><strong>19:00 (220)</strong></li>
+          <li><span>Top: Amherst-Clarence</span><strong>757</strong></li>
+          <li><span>Municipalities</span><strong>166</strong></li>
+          <li><span>Businesses</span><strong>140</strong></li>
+          <li><span>Maritime Ops</span><strong>124</strong></li>
+          <li><span>Erie County (BFD)</span><strong>116</strong></li>
+          <li><span>Niagara County</span><strong>100</strong></li>
+          <li><span>Tier Alpha hits</span><strong>0</strong></li>
+          <li><span>Tier 1 (owned-property) hits</span><strong>0</strong></li>
+          <li><span>Regional Breaking</span><strong>0</strong></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- SOURCES -->
+  <div class="sources">
+    <h2>Sources &mdash; Audio Files Cited</h2>
+    <ol>
+      <li>[22:55:18] Amherst-Clarence / Amherst PD &mdash; E:\ProScan Recordings\05-09-26\Amherst-Clarence\05-09-26 22-55-17 - Amherst-Clarence - Amherst PD TO 22-55-31.mp3</li>
+      <li>[22:58:03] Amherst-Clarence / Amherst PD &mdash; E:\ProScan Recordings\05-09-26\Amherst-Clarence\05-09-26 22-58-03 - Amherst-Clarence - Amherst PD TO 22-58-20.mp3</li>
+      <li>[21:29:23] Amherst-Clarence / Amherst PD &mdash; E:\ProScan Recordings\05-09-26\Amherst-Clarence\05-09-26 21-29-22 - Amherst-Clarence - Amherst PD TO 21-29-31.mp3</li>
+      <li>[01:37:39] Amherst-Clarence / Amherst PD &mdash; E:\ProScan Recordings\05-10-26\Amherst-Clarence\05-10-26 01-37-39 - Amherst-Clarence - Amherst PD TO 01-37-50.mp3</li>
+      <li>[19:07:28] Amherst-Clarence / Amherst PD &mdash; E:\ProScan Recordings\05-09-26\Amherst-Clarence\05-09-26 19-07-28 - Amherst-Clarence - Amherst PD TO 19-07-34.mp3</li>
+      <li>[18:55:39] Amherst-Clarence / Amherst PD &mdash; E:\ProScan Recordings\05-09-26\Amherst-Clarence\05-09-26 18-55-39 - Amherst-Clarence - Amherst PD TO 18-55-44.mp3</li>
+      <li>[15:11:46] Amherst-Clarence / Amherst Fire Dis &mdash; E:\ProScan Recordings\05-09-26\Amherst-Clarence\05-09-26 15-11-46 - Amherst-Clarence - Amherst Fire Dis TO 15-11-56.mp3</li>
+      <li>[15:14:31] Amherst-Clarence / Amherst Fire Dis &mdash; E:\ProScan Recordings\05-09-26\Amherst-Clarence\05-09-26 15-14-31 - Amherst-Clarence - Amherst Fire Dis TO 15-14-33.mp3</li>
+      <li>[15:10:50] Amherst-Clarence / Amherst Fire Dis &mdash; E:\ProScan Recordings\05-09-26\Amherst-Clarence\05-09-26 15-10-50 - Amherst-Clarence - Amherst Fire Dis TO 15-10-56.mp3</li>
+      <li>[15:15:59] Amherst-Clarence / Amherst Fire Dis &mdash; E:\ProScan Recordings\05-09-26\Amherst-Clarence\05-09-26 15-15-59 - Amherst-Clarence - Amherst Fire Dis TO 15-16-04.mp3</li>
+      <li>[15:52:38] Amherst-Clarence / Amherst Fire Dis &mdash; E:\ProScan Recordings\05-09-26\Amherst-Clarence\05-09-26 15-52-38 - Amherst-Clarence - Amherst Fire Dis TO 15-52-45.mp3</li>
+      <li>[18:44:21] Amherst-Clarence / Amherst PD &mdash; E:\ProScan Recordings\05-09-26\Amherst-Clarence\05-09-26 18-44-21 - Amherst-Clarence - Amherst PD TO 18-44-27.mp3</li>
+      <li>[05:54:43] Amherst-Clarence / Amherst Fire Dis &mdash; E:\ProScan Recordings\05-10-26\Amherst-Clarence\05-10-26 05-54-43 - Amherst-Clarence - Amherst Fire Dis TO 05-54-50.mp3</li>
+      <li>[06:14:39] Amherst-Clarence / Amherst Fire Dis &mdash; E:\ProScan Recordings\05-10-26\Amherst-Clarence\05-10-26 06-14-39 - Amherst-Clarence - Amherst Fire Dis TO 06-14-43.mp3</li>
+      <li>[15:07:45] Niagara Region / Embassy Control &mdash; E:\ProScan Recordings\05-09-26\Niagara Region\05-09-26 15-07-39 - Niagara Region - Embassy Control TO 15-07-47.mp3</li>
+      <li>[19:56:39] Amherst-Clarence / Amherst PD &mdash; E:\ProScan Recordings\05-09-26\Amherst-Clarence\05-09-26 19-56-39 - Amherst-Clarence - Amherst PD TO 19-56-54.mp3</li>
+      <li>[15:40:18] Taxis / BuffaloLimo &mdash; E:\ProScan Recordings\05-09-26\Taxis\05-09-26 15-40-18 - Taxis - BuffaloLimo TO 15-40-37.mp3</li>
+      <li>[17:50:33] Businesses / TPS BNIA Shuttle &mdash; E:\ProScan Recordings\05-09-26\Businesses\05-09-26 17-50-33 - Businesses - TPS BNIA Shuttle TO 17-50-42.mp3</li>
+      <li>[17:50:46] Businesses / TPS BNIA Shuttle &mdash; E:\ProScan Recordings\05-09-26\Businesses\05-09-26 17-50-44 - Businesses - TPS BNIA Shuttle TO 17-50-53.mp3</li>
+      <li>[17:51:25] Businesses / TPS BNIA Shuttle &mdash; E:\ProScan Recordings\05-09-26\Businesses\05-09-26 17-51-25 - Businesses - TPS BNIA Shuttle TO 17-51-34.mp3</li>
+      <li>[17:32:42] Businesses / TPS BNIA Shuttle &mdash; E:\ProScan Recordings\05-09-26\Businesses\05-09-26 17-32-42 - Businesses - TPS BNIA Shuttle TO 17-32-46.mp3</li>
+      <li>[17:54:17] Businesses / TPS BNIA Shuttle &mdash; E:\ProScan Recordings\05-09-26\Businesses\05-09-26 17-54-17 - Businesses - TPS BNIA Shuttle TO 17-54-26.mp3</li>
+      <li>[17:22:13] Businesses / TPS BNIA Shuttle &mdash; E:\ProScan Recordings\05-09-26\Businesses\05-09-26 17-22-09 - Businesses - TPS BNIA Shuttle TO 17-22-19.mp3</li>
+      <li>[20:19:14] FRS / FRS 15 &mdash; E:\ProScan Recordings\05-09-26\FRS\05-09-26 20-19-14 - FRS - FRS 15 TO 20-19-24.mp3</li>
+      <li>[20:40:23] FRS / FRS 16 &mdash; E:\ProScan Recordings\05-09-26\FRS\05-09-26 20-40-23 - FRS - FRS 16 TO 20-40-33.mp3</li>
+      <li>[20:50:18] FRS / FRS 16 &mdash; E:\ProScan Recordings\05-09-26\FRS\05-09-26 20-50-18 - FRS - FRS 16 TO 20-50-26.mp3</li>
+      <li>[15:03:21] Amherst-Clarence / Amherst PD &mdash; E:\ProScan Recordings\05-09-26\Amherst-Clarence\05-09-26 15-03-20 - Amherst-Clarence - Amherst PD TO 15-03-23.mp3</li>
+      <li>[18:53:38] Niagara County / NC FD Dispatch &mdash; E:\ProScan Recordings\05-09-26\Niagara County\05-09-26 18-53-38 - Niagara County - NC FD Dispatch TO 18-53-40.mp3</li>
+      <li>[00:36:18] Municipalities / CFD Disp &mdash; E:\ProScan Recordings\05-10-26\Municipalities\05-10-26 00-36-16 - Municipalities - CFD Disp TO 00-36-19.mp3</li>
+      <li>[18:53:19] Niagara County / NC FD Dispatch &mdash; E:\ProScan Recordings\05-09-26\Niagara County\05-09-26 18-53-18 - Niagara County - NC FD Dispatch TO 18-53-28.mp3</li>
+      <li>[19:02:25] Niagara County / NC FD Dispatch &mdash; E:\ProScan Recordings\05-09-26\Niagara County\05-09-26 19-02-25 - Niagara County - NC FD Dispatch TO 19-02-33.mp3</li>
+      <li>[00:56:08] Amherst-Clarence / Amherst PD &mdash; E:\ProScan Recordings\05-10-26\Amherst-Clarence\05-10-26 00-56-08 - Amherst-Clarence - Amherst PD TO 00-56-20.mp3</li>
+      <li>[00:16:58] Municipalities / Cheektwga PD 1 &mdash; E:\ProScan Recordings\05-10-26\Municipalities\05-10-26 00-16-58 - Municipalities - Cheektwga PD 1 TO 00-17-02.mp3</li>
+      <li>[17:25:44] Erie County / BFD Ch1 Disp &mdash; E:\ProScan Recordings\05-09-26\Erie County\05-09-26 17-25-44 - Erie County - BFD Ch1 Disp TO 17-25-54.mp3</li>
+      <li>[00:44:10] Erie County / BFD Ch1 Disp &mdash; E:\ProScan Recordings\05-10-26\Erie County\05-10-26 00-44-10 - Erie County - BFD Ch1 Disp TO 00-44-22.mp3</li>
+      <li>[18:50:08] Niagara County / NC FD Dispatch &mdash; E:\ProScan Recordings\05-09-26\Niagara County\05-09-26 18-50-08 - Niagara County - NC FD Dispatch TO 18-50-17.mp3</li>
+      <li>[19:15:24] Niagara County / NC FD Dispatch &mdash; E:\ProScan Recordings\05-09-26\Niagara County\05-09-26 19-15-24 - Niagara County - NC FD Dispatch TO 19-15-34.mp3</li>
+      <li>[18:45:39] Erie County / BFD Ch1 Disp &mdash; E:\ProScan Recordings\05-09-26\Erie County\05-09-26 18-45-39 - Erie County - BFD Ch1 Disp TO 18-45-49.mp3</li>
+      <li>[18:48:36] Erie County / BFD Ch1 Disp &mdash; E:\ProScan Recordings\05-09-26\Erie County\05-09-26 18-48-35 - Erie County - BFD Ch1 Disp TO 18-48-45.mp3</li>
+      <li>[19:53:57] Erie County / BFD Ch1 Disp &mdash; E:\ProScan Recordings\05-09-26\Erie County\05-09-26 19-53-57 - Erie County - BFD Ch1 Disp TO 19-54-06.mp3</li>
+      <li>[19:32:37] Municipalities / T-Hamburg FD Dsp &mdash; E:\ProScan Recordings\05-09-26\Municipalities\05-09-26 19-32-37 - Municipalities - T-Hamburg FD Dsp TO 19-32-44.mp3</li>
+      <li>[19:51:19] Municipalities / T-Hamburg FD Dsp &mdash; E:\ProScan Recordings\05-09-26\Municipalities\05-09-26 19-51-19 - Municipalities - T-Hamburg FD Dsp TO 19-51-28.mp3</li>
+      <li>[18:17:34] Niagara County / NC FD Dispatch &mdash; E:\ProScan Recordings\05-09-26\Niagara County\05-09-26 18-17-34 - Niagara County - NC FD Dispatch TO 18-17-44.mp3</li>
+      <li>[20:06:24] Niagara County / NC FD Dispatch &mdash; E:\ProScan Recordings\05-09-26\Niagara County\05-09-26 20-06-24 - Niagara County - NC FD Dispatch TO 20-06-30.mp3</li>
+      <li>[18:28:29] Niagara County / NC FD Dispatch &mdash; E:\ProScan Recordings\05-09-26\Niagara County\05-09-26 18-28-29 - Niagara County - NC FD Dispatch TO 18-28-37.mp3</li>
+      <li>[19:44:17] Niagara County / NC FD Dispatch &mdash; E:\ProScan Recordings\05-09-26\Niagara County\05-09-26 19-44-16 - Niagara County - NC FD Dispatch TO 19-44-20.mp3</li>
+      <li>[21:23:17] Municipalities / OPFD 1 Disp &mdash; E:\ProScan Recordings\05-09-26\Municipalities\05-09-26 21-23-16 - Municipalities - OPFD 1 Disp TO 21-23-24.mp3</li>
+      <li>[21:15:57] Schools (Erie) / BPD Ch 3 Simul &mdash; E:\ProScan Recordings\05-09-26\Schools (Erie)\05-09-26 21-15-56 - Schools (Erie) - BPD Ch 3 Simul TO 21-16-06.mp3</li>
+      <li>[20:11:23] Municipalities / Evans PD 1 &mdash; E:\ProScan Recordings\05-09-26\Municipalities\05-09-26 20-11-22 - Municipalities - Evans PD 1 TO 20-11-27.mp3</li>
+      <li>[18:39:10] Schools (Erie) / BPD Ch 3 Simul &mdash; E:\ProScan Recordings\05-09-26\Schools (Erie)\05-09-26 18-39-10 - Schools (Erie) - BPD Ch 3 Simul TO 18-39-19.mp3</li>
+    </ol>
+  </div>
+
+  <!-- FOOTER -->
+  <div class="footer">
+    Generated 2026-05-10 &middot; Compiled from public radio scanner traffic via the WNY Listening Post automated pipeline.
+    <div class="disclaim">Transcriptions are AI-generated and may contain errors. Names and details should be verified before action.</div>
+  </div>
+
+</div>
+</body>
+</html>
