@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>WNY Listening Post — Clarence Town Board — May 13, 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@400;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --ink:#000; --paper:#FFF; --red:#D40000; --grey:#EEE; --grey-deep:#4A4A4A; --soft:#FAFAFA; }
+  * { box-sizing: border-box; }
+  body { margin:0; background:#c8c8c8; font-family: Georgia, "Times New Roman", serif; color: var(--ink); line-height: 1.42; padding: 20px 0; }
+  .page { max-width: 980px; margin: 0 auto; background: var(--paper); border: 1px solid #999; box-shadow: 0 4px 18px rgba(0,0,0,0.25); }
+
+  /* MASTHEAD: red flag with internal separator; thick black border below */
+  .masthead { background: var(--red); color: var(--paper); padding: 18px 28px 12px; border-bottom: 6px solid var(--ink); }
+  .masthead .flag { font-family: 'Anton', 'Impact', sans-serif; font-size: 56px; line-height: 0.95; margin: 0; text-transform: uppercase; }
+  .masthead .tag { font-family: 'Oswald', sans-serif; font-weight: 700; letter-spacing: 3px; font-size: 11px; text-transform: uppercase; margin-top: 6px; border-top: 1px solid rgba(255,255,255,0.4); padding-top: 6px; display: flex; justify-content: space-between; }
+
+  /* STRIP: black bar below masthead, separated by the masthead's 6px black bottom border */
+  .strip { background: var(--ink); color: var(--paper); font-family: 'Bebas Neue', 'Anton', sans-serif; letter-spacing: 2px; padding: 8px 28px; font-size: 18px; display: flex; justify-content: space-between; align-items: baseline; border-bottom: 3px solid var(--red); }
+  .strip .dev-flag { background: var(--red); color: var(--paper); padding: 2px 10px; font-size: 16px; }
+
+  .body { padding: 24px 28px 8px; }
+
+  .kicker { font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 4px; font-weight: 700; font-size: 12px; color: var(--red); margin: 0 0 6px; }
+  h1.lede { font-family: 'Anton', 'Impact', sans-serif; font-size: 72px; line-height: 0.9; margin: 0 0 14px; text-transform: uppercase; letter-spacing: -0.5px; }
+  h1.lede em { font-style: italic; color: var(--red); }
+  .subhead { font-family: Georgia, serif; font-style: italic; font-size: 19px; line-height: 1.32; margin: 0 0 14px; padding-bottom: 14px; border-bottom: 2px solid var(--ink); }
+  .byline { font-family: 'Oswald', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 2px; color: var(--grey-deep); margin: -8px 0 18px; }
+
+  .band { background: var(--ink); color: var(--paper); font-family: 'Anton', sans-serif; text-transform: uppercase; letter-spacing: 1.5px; padding: 6px 12px; font-size: 22px; margin: 22px 0 12px; border-left: 8px solid var(--red); }
+  .band.red { background: var(--red); border-left-color: var(--ink); }
+
+  .cols2 { display: grid; grid-template-columns: 1.5fr 1fr; gap: 22px; }
+
+  p { margin: 0 0 10px; font-size: 15.5px; }
+  p.drop::first-letter { font-family: 'Anton', sans-serif; font-size: 56px; line-height: 0.85; float: left; padding: 4px 8px 0 0; color: var(--red); }
+
+  .pull { background: var(--grey); border-left: 6px solid var(--red); padding: 14px 18px; margin: 14px 0; font-family: Georgia, serif; font-style: italic; font-size: 18px; line-height: 1.35; }
+  .pull .who { display: block; font-style: normal; font-family: 'Oswald', sans-serif; text-transform: uppercase; letter-spacing: 2px; font-size: 11px; color: var(--grey-deep); margin-top: 8px; }
+
+  .box { background: var(--grey); padding: 14px 16px; margin: 14px 0; border-top: 4px solid var(--red); }
+  .box-head { font-family: 'Anton', sans-serif; text-transform: uppercase; letter-spacing: 2px; font-size: 18px; margin: 0 0 8px; }
+  .box ul { margin: 0; padding-left: 18px; font-size: 14px; }
+  .box li { margin-bottom: 6px; }
+  .box p { font-size: 14px; }
+
+  .nums { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; margin: 14px 0; border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+  .num-cell { padding: 10px 8px; text-align: center; border-right: 1px solid #ccc; }
+  .num-cell:last-child { border-right: 0; }
+  .num-cell .n { font-family: 'Anton', sans-serif; font-size: 38px; line-height: 1; color: var(--red); display: block; }
+  .num-cell .lbl { font-family: 'Oswald', sans-serif; font-size: 10px; text-transform: uppercase; letter-spacing: 1.5px; margin-top: 4px; color: var(--grey-deep); line-height: 1.2; display: block; }
+
+  /* SCOREBOARD: 4-column cell grid for the public-hearing speakers */
+  .scoreboard { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--ink); margin: 12px 0 18px; padding: 1px; }
+  .score-cell { background: var(--paper); padding: 10px 8px; text-align: center; }
+  .score-cell .who { font-family: 'Oswald', sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; font-weight: 700; }
+  .score-cell .role { font-family: 'Oswald', sans-serif; font-size: 9px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--grey-deep); }
+  .score-cell .stmt { font-family: Georgia, serif; font-style: italic; font-size: 11.5px; line-height: 1.32; margin-top: 6px; }
+
+  /* RESOLUTIONS: expandable rows */
+  .res-list { margin: 8px 0 18px; border-top: 3px solid var(--ink); border-bottom: 3px solid var(--ink); }
+  details.res { border-bottom: 1px solid #ddd; }
+  details.res:last-child { border-bottom: 0; }
+  details.res > summary {
+    list-style: none;
+    cursor: pointer;
+    padding: 8px 12px 8px 10px;
+    display: grid;
+    grid-template-columns: 36px 1fr 110px 22px;
+    gap: 10px;
+    align-items: center;
+    font-size: 13px;
+    background: var(--paper);
+    transition: background 0.15s;
+  }
+  details.res > summary:hover { background: #f4f4f4; }
+  details.res > summary::-webkit-details-marker { display: none; }
+  details.res > summary::marker { content: ""; }
+  details.res > summary .res-num { font-family: 'Oswald', sans-serif; font-weight: 700; color: var(--red); font-size: 13px; }
+  details.res > summary .res-title { line-height: 1.3; }
+  details.res > summary .res-title strong { font-family: 'Oswald', sans-serif; text-transform: uppercase; font-size: 11.5px; letter-spacing: 0.5px; }
+  details.res > summary .res-result { font-family: 'Oswald', sans-serif; color: var(--red); font-weight: 700; font-size: 10px; text-transform: uppercase; letter-spacing: 1px; text-align: right; }
+  details.res > summary .res-toggle { font-family: 'Oswald', sans-serif; color: var(--grey-deep); font-weight: 700; text-align: center; font-size: 16px; line-height: 1; }
+  details.res[open] > summary .res-toggle::before { content: "−"; color: var(--red); }
+  details.res:not([open]) > summary .res-toggle::before { content: "+"; }
+  details.res .res-detail { padding: 10px 16px 14px 56px; background: var(--soft); font-size: 13px; line-height: 1.5; border-top: 1px dotted #ccc; }
+  details.res .res-detail p { font-size: 13px; margin: 0 0 6px; }
+  details.res .res-detail .meta { font-family: 'Oswald', sans-serif; font-size: 10.5px; text-transform: uppercase; letter-spacing: 1.5px; color: var(--grey-deep); margin-top: 6px; }
+  details.res.flagged > summary { background: #FFF7F7; }
+  details.res.flagged > summary:hover { background: #FFEEEE; }
+
+  .sources { margin-top: 24px; border-top: 4px solid var(--ink); padding: 14px 0 6px; font-family: 'Consolas', 'Monaco', monospace; font-size: 11px; line-height: 1.55; color: var(--grey-deep); }
+  .sources-head { font-family: 'Anton', sans-serif; color: var(--ink); text-transform: uppercase; letter-spacing: 3px; font-size: 16px; margin-bottom: 8px; }
+
+  .foot { background: var(--ink); color: var(--paper); padding: 14px 28px; font-family: 'Oswald', sans-serif; font-size: 11px; letter-spacing: 1.2px; text-transform: uppercase; margin-top: 18px; }
+  .foot .disclaim { font-family: Georgia, serif; font-style: italic; text-transform: none; letter-spacing: 0; font-size: 11.5px; color: #ccc; margin-top: 6px; }
+
+  sup.fn { font-family: 'Oswald', sans-serif; color: var(--red); font-weight: 700; font-size: 10px; padding: 0 2px; }
+
+  @media (max-width: 720px) {
+    .cols2 { grid-template-columns: 1fr; }
+    .nums { grid-template-columns: repeat(2, 1fr); }
+    .scoreboard { grid-template-columns: 1fr; }
+    h1.lede { font-size: 52px; }
+    .masthead .flag { font-size: 40px; }
+    details.res > summary { grid-template-columns: 28px 1fr 80px 18px; gap: 6px; padding: 8px; font-size: 12px; }
+    details.res .res-detail { padding-left: 38px; }
+  }
+
+/* === WNY LISTENING POST SITE MASTHEAD (unified across all pages) === */
+.site-shell { max-width:1180px; margin:0 auto; background:#fff; box-shadow:0 0 24px rgba(0,0,0,.18); }
+.site-masthead-logo { background:#D40000; color:#fff; padding:18px 26px 12px 26px; border-bottom:4px solid #000; }
+.site-masthead-logo h1 { font-family:'Anton','Bebas Neue', Impact, sans-serif; font-style:italic; text-transform:uppercase; letter-spacing:2px; font-size:88px; line-height:.95; margin:0; }
+.site-masthead-sub { background:#000; color:#fff; padding:8px 26px; font-family:'Oswald', Arial, sans-serif; font-size:14px; text-transform:uppercase; letter-spacing:2px; display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap:6px; }
+.site-masthead-sub .smast-section { color:#fff; }
+.site-masthead-sub .smast-edition { color:#D40000; font-weight:700; }
+.site-tagline { padding:10px 26px 14px 26px; font-style:italic; color:#444; font-family:Georgia,serif; font-size:15px; border-bottom:2px solid #000; background:#fff; }
+@media (max-width:720px) {
+  .site-masthead-logo h1 { font-size:54px; letter-spacing:1px; }
+  .site-masthead-sub { font-size:11px; letter-spacing:1.5px; padding:8px 16px; }
+  .site-tagline { padding:10px 16px 14px 16px; font-size:13px; }
+}
+
+/* === WNY LISTENING POST SITE NAV === */
+.wnylp-nav { background:#000; border-top:4px solid #D40000; border-bottom:2px solid #D40000; font-family:'Oswald',Arial,sans-serif; position:relative; z-index:100; }
+.wnylp-nav .nav-inner { max-width:1180px; margin:0 auto; padding:0; }
+.wnylp-nav ul { list-style:none; margin:0; padding:0; }
+.wnylp-nav .nav-l1 { display:flex; flex-wrap:wrap; }
+.wnylp-nav .nav-l1 > li { position:relative; }
+.wnylp-nav .nav-l1 > li > a, .wnylp-nav .nav-l1 > li > .nav-trigger {
+  display:block; padding:13px 22px; color:#fff; text-transform:uppercase;
+  font-weight:700; letter-spacing:2px; font-size:13px; text-decoration:none; cursor:pointer;
+  background:transparent; border:0; outline:none;
+}
+.wnylp-nav .nav-l1 > li > a:hover, .wnylp-nav .nav-l1 > li > .nav-trigger:hover,
+.wnylp-nav .nav-l1 > li:hover > a, .wnylp-nav .nav-l1 > li:hover > .nav-trigger,
+.wnylp-nav .nav-l1 > li.open > a, .wnylp-nav .nav-l1 > li.open > .nav-trigger { background:#D40000; color:#fff; }
+.wnylp-nav .nav-l1 > li.current > a { background:#D40000; }
+.wnylp-nav .nav-l1 > li.has-sub > .nav-trigger::after { content:" \25BE"; font-size:10px; opacity:.7; }
+.wnylp-nav .nav-l2 {
+  display:none; position:absolute; top:100%; left:0; min-width:260px;
+  background:#1a1a1a; border-top:2px solid #D40000; box-shadow:0 6px 14px rgba(0,0,0,.45);
+}
+.wnylp-nav .nav-l1 > li:hover > .nav-l2,
+.wnylp-nav .nav-l1 > li.open > .nav-l2 { display:block; }
+.wnylp-nav .nav-l2 > li { position:relative; }
+.wnylp-nav .nav-l2 > li > a, .wnylp-nav .nav-l2 > li > .nav-trigger {
+  display:block; padding:11px 18px; color:#fff; text-transform:uppercase;
+  font-weight:600; letter-spacing:1.5px; font-size:12px; text-decoration:none; cursor:pointer;
+  background:transparent; border:0; outline:none; width:100%; text-align:left;
+}
+.wnylp-nav .nav-l2 > li:hover > a, .wnylp-nav .nav-l2 > li:hover > .nav-trigger,
+.wnylp-nav .nav-l2 > li.open > a, .wnylp-nav .nav-l2 > li.open > .nav-trigger { background:#D40000; }
+.wnylp-nav .nav-l2 > li.has-sub > .nav-trigger::after { content:"\00A0\25B8"; font-size:10px; opacity:.7; float:right; margin-left:10px; }
+.wnylp-nav .nav-l3 {
+  display:none; position:absolute; top:0; left:100%; min-width:300px;
+  background:#1a1a1a; border-left:2px solid #D40000; box-shadow:6px 6px 14px rgba(0,0,0,.45);
+}
+.wnylp-nav .nav-l2 > li:hover > .nav-l3,
+.wnylp-nav .nav-l2 > li.open > .nav-l3 { display:block; }
+.wnylp-nav .nav-l3 > li > a {
+  display:block; padding:10px 16px; color:#fff; font-size:13px; text-decoration:none;
+  font-family:Georgia,serif; line-height:1.35;
+}
+.wnylp-nav .nav-l3 > li > a:hover { background:#D40000; }
+.wnylp-nav .nav-l3 > li > a .nav-meta { display:block; font-family:'Oswald',sans-serif; font-size:10px; text-transform:uppercase; letter-spacing:1px; opacity:.7; margin-top:2px; }
+@media (max-width: 720px) {
+  .wnylp-nav .nav-l1 { flex-direction:column; }
+  .wnylp-nav .nav-l1 > li > a, .wnylp-nav .nav-l1 > li > .nav-trigger { padding:11px 18px; }
+  .wnylp-nav .nav-l2, .wnylp-nav .nav-l3 { position:static; min-width:0; box-shadow:none; border-left:0; border-top:1px solid #333; }
+  .wnylp-nav .nav-l1 > li.has-sub > .nav-trigger::after { float:right; }
+}
+
+
+/* Inside .site-shell, let .page fill the full width */
+.site-shell .page { max-width:none; margin:0; border:0; box-shadow:none; }
+/* Body background: the gray frame around the printed page is preserved */
+</style>
+</head>
+<body>
+
+<div class="site-shell">
+
+<!-- ===== UNIFIED WNY LISTENING POST MASTHEAD ===== -->
+<div class="site-masthead-logo">
+  <h1>The WNY Listening Post</h1>
+</div>
+<div class="site-masthead-sub">
+  <span class="smast-section">Local Government &middot; Town of Clarence &middot; Town Board Regular Meeting</span>
+  <span class="smast-edition">Special Edition &middot; Wednesday, May 13, 2026</span>
+</div>
+<div class="site-tagline">Eyes on the wires. Ears on the radio. And, when the cameras are rolling, the dais too.</div>
+
+
+<nav class="wnylp-nav" aria-label="Site navigation">
+  <div class="nav-inner">
+    <ul class="nav-l1">
+      <li><a href="/wny-listening-post/">Current Headlines</a></li>
+      <li class="has-sub">
+        <button type="button" class="nav-trigger" aria-haspopup="true" aria-expanded="false">Local Government News</button>
+        <ul class="nav-l2">
+          <li class="has-sub">
+            <button type="button" class="nav-trigger" aria-haspopup="true" aria-expanded="false">Clarence</button>
+            <ul class="nav-l3">
+              <li><a href="/wny-listening-post/local-government/clarence_tb_2026-05-13.html">Town Board<span class="nav-meta">Regular Meeting &middot; May 13, 2026</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
+<div class="page">
+
+<div class="body">
+
+<p class="kicker">A supervisor's recusal · A $1.115M overrun · A garbage-district counterattack</p>
+<h1 class="lede">"I own the property<br>next door to it."<br>Casilio steps aside — and the 50-unit project behind Samuel's clears the board <em>4&ndash;0</em>.</h1>
+<p class="subhead">Four years, four designs (40 → 24 → 20 → 50), and on Wednesday morning the rezoning and special exception use permit needed for 8750 Main Street Associates' multifamily housing project behind the Samuel's Grande Manor banquet hall <em>both</em> passed on roll-call vote — with Supervisor Patrick Casilio recused on the record because he owns the adjoining property. Three public speakers raised traffic, drainage, and a school-district privacy-fence ask. The applicant declined the fence. The board also amended a sidewalk bond up by <em>$1.115 million</em>, and the supervisor used eight minutes of resolution time to read a Bee-bound article punching back at municipal garbage-district advocates.</p>
+<p class="byline">~ 65.9 minutes of audio · faster-whisper "medium" · 575 transcript segments · Captured live · No back-archive available from the Town's YouTube channel</p>
+
+<!-- ============ LEAD: 8750 MAIN STREET ============ -->
+<div class="band red">The Lead — 8750 Main Street: Rezoning, SEUP, and a Recusal</div>
+
+<div class="cols2">
+<div>
+<p class="drop">When the board reached agenda item 11, Supervisor Patrick Casilio stopped the meeting and stepped down from the dais. <em>"I'm recusing myself from it because I own the property next door to it,"</em><sup class="fn">[1]</sup> he told the room. Councilman Peter DiCostanzo took the gavel. The first of two public hearings on 8750 Main Street Associates LLC's project followed immediately.</p>
+
+<p>Director of Community Development Jonathan Bleuer<sup class="fn">[*]</sup> walked the project history. In 2021, property owner Charlie Pizzino proposed 40 units; the town's review brought that down to 24, and Pizzino called the smaller project cost-prohibitive and stepped away in 2023. A 20-unit revival in 2024 was withdrawn during review. The current 50-unit proposal entered planning board review in May 2025 with a different design, iterated through fall, drew a SEQR negative declaration in February 2026, picked up a Zoning Board of Appeals variance for building size, and was granted planning board concept-plan approval with 16 conditions on April 1.<sup class="fn">[1]</sup></p>
+
+<p>Sean Hopkins of Hopkins Sorgi appeared as counsel for the applicant alongside Rich and Pat McNamara. Hopkins argued the requested rezoning of the rear 1.66 acres from Residential Single-Family to Traditional Neighborhood District was <em>"extremely well vetted"</em> and noted his client had developed an alternative design that would not require the rezoning — if the rezoning were rejected, the project still moves forward, with a worse layout. Construction is targeted for August.<sup class="fn">[1]</sup></p>
+
+<p>Three speakers took the public-comment microphone:</p>
+
+<div class="scoreboard">
+  <div class="score-cell">
+    <div class="who">Don Campagna</div>
+    <div class="role">8777 Main Street LLC · abutter</div>
+    <div class="stmt">"Main Street over the past few years has continued to get busier… I just would like to make sure [Connection Drive] is not going to become a problem."</div>
+  </div>
+  <div class="score-cell">
+    <div class="who">Kathy Failing</div>
+    <div class="role">4420 Overlook · downstream</div>
+    <div class="stmt">"My whole property has the creek. That's the drainage to the entire Overlook–Bondcrest section, and I already have some issues with water flooding my yard."</div>
+  </div>
+  <div class="score-cell">
+    <div class="who">Patty Grebka</div>
+    <div class="role">Asst. Supt., Clarence CSD</div>
+    <div class="stmt">"We periodically do find people wandering through there… I'm wondering if the builder would consider adding some privacy fencing and maybe some deciduous trees on their side."</div>
+  </div>
+</div>
+
+<p>Hopkins addressed all three from the podium. Traffic: detailed plan reviewed by NYSDOT engineer Kevin Hebert; written confirmation no significant adverse traffic impact. Septic versus sewer: septic, location at the rear corner, Erie County Health Department application already filed. Drainage: handled on-site to DEC and town standards including a 100-year storm event, designed to also handle water currently entering the site.<sup class="fn">[1]</sup></p>
+
+<p>On the school district's privacy-fence ask, Hopkins declined: <em>"We'd be a little bit reluctant to clear the vegetation on the back of the site and replace that with a privacy fence. A lot of that vegetation is actually on our site and our goal would be to preserve as much of that as possible."</em><sup class="fn">[1]</sup> Bleuer added that a required landscape plan will go before the town's landscape review committee — representatives were in the room listening — and that the applicant would communicate with the school district directly.</p>
+
+<p>The second hearing — on the SEUP itself — drew no public speakers. Both resolutions passed by roll call with Casilio recused. He returned to the dais for the rest of the meeting.</p>
+
+</div>
+
+<div>
+
+<div class="box">
+<div class="box-head">In the Room</div>
+<ul>
+<li><strong>The site:</strong> 9.6-acre parcel, north side of Main Street west of Overlook. Contains the existing Samuel's Grande Manor banquet facility and a small existing multifamily component on the facility's second floor.</li>
+<li><strong>The ask:</strong> Rezone the rear 1.66 acres from R-SF to TND; SEUP for 50 multifamily units in a single building designed to read as two.</li>
+<li><strong>The vote:</strong> 4–0 on each of items 11 and 12; supervisor recused.</li>
+<li><strong>The neighbor to the north:</strong> Clarence Central School District property — Sheridan Hill. "Even though it is forested, it is open access," per Asst. Supt. Grebka.<sup class="fn">[1]</sup></li>
+<li><strong>The Town's professionals:</strong> Town counsel Sean Hopkins; Director of Community Development Jonathan Bleuer; landscape review committee in attendance.</li>
+<li><strong>Coming next:</strong> Project returns to the planning board for development plan approval; landscape plan must clear the landscape review committee; targeted construction start <strong>August 2026</strong>.<sup class="fn">[1]</sup></li>
+</ul>
+</div>
+
+<div class="pull">"We did provide detailed information to the New York State Department of Transportation… written communication the plan department confirming this project will not have any potentially significant adverse traffic impacts."<span class="who">Sean Hopkins, applicant's counsel<sup class="fn">[1]</sup></span></div>
+
+<div class="pull">"You just got to be careful coming out of those streets… a lot of people use Connection as a cut-through, as you know."<span class="who">Councilman Bob Geiger, closing public comment on item 11<sup class="fn">[1]</sup></span></div>
+
+</div>
+</div>
+
+<!-- ============ SIDEWALK BOND ============ -->
+<div class="band">$1.115M Overrun — The Sheridan Drive Sidewalk Bond Climbs to $2,015,466</div>
+<p>The board's first substantive vote of the morning was a five-page bond resolution amending financing for sidewalks on both sides of Sheridan Drive between Thompson/Main and Transit Road — <strong>five miles of sidewalk total</strong>. The original 2022 NYSDOT-grant estimate was <strong>$4,310,035</strong>; with detailed design and after bids opened April 30, the estimate now stands at <strong>$5,463,494</strong>. The town's share (the bonded portion) goes from $900,000 originally authorized in May 2025 up to <strong>$2,015,466</strong> — a $1,115,466 increase passed by roll call.<sup class="fn">[1]</sup></p>
+<p>Supervisor Casilio asked the explanation from highway superintendent Tim, who noted the original estimating predated detailed design and that bids were opened on April 30. <em>"The result of those bids are reflected in this increased bond authorization."</em><sup class="fn">[1]</sup> Contract award is expected at a future meeting.</p>
+
+<!-- ============ GARBAGE DISTRICT ============ -->
+<div class="band">"Either Incomplete or Inaccurate" — Casilio Reads a Bee-Bound Article Into the Record</div>
+
+<div class="cols2">
+<div>
+<p>Mid-meeting, Casilio paused the resolutions calendar to read into the record an article he said will appear in this week's <em>Bee</em>. The subject: a possible municipal garbage collection district. The trigger: comments made at the April town board meeting by residents advocating for one. The framing: <em>"Information shared in support of these claims was either incomplete or inaccurate, resulting in a mischaracterization of the facts."</em><sup class="fn">[1]</sup></p>
+
+<p>The town has retained <strong>Drescher &amp; Malecki LLP</strong><sup class="fn">[*]</sup> — the Buffalo-based municipal accounting firm — for an "objective comparison" using communities comparable in size. Hamburg and Orchard Park were named as the comparables under study. Casilio noted Hamburg has recently established a district but is not yet fully operational, and Orchard Park just completed what he called <em>"a lengthy and complex process to secure a new vendor."</em><sup class="fn">[1]</sup></p>
+
+<p>His numbers, attributed to preliminary findings: a municipal district in Clarence would cost approximately <strong>$320 per year</strong> — <em>"slightly less than what private haulers are charging now"</em> — but with <em>"far less services"</em> than residents currently receive. He named two existing private haulers and their rates: <strong>Waste Management at $462</strong> per year with recycling every other week (bulk pickup extra); <strong>Modern Disposal at $540</strong> per year with weekly recycling and weekly bulk pickup.<sup class="fn">[1]</sup></p>
+
+<p><em>"The people that came in and spoke before us said that these vendors are charging $1,100 a year… It's important for our residents to always keep checking their pricing, because the vendors have restructured their pricing to be more competitive."</em><sup class="fn">[1]</sup></p>
+
+<p>Then the fiscal warning: implementing a district could increase town expenditures by as much as <strong>$4 million in the first year alone</strong> — enough to bust the New York State 2% tax cap. <em>"Passing this cap could result in many residents possibly losing their STAR property tax credits. For most people STAR could be worth $900. You're going to save $100 on your garbage refuge, but lose your STAR credit of $900 — or even more depending upon your age and your service to the community."</em><sup class="fn">[1]</sup></p>
+
+<p>Twenty years ago, Casilio noted, the town considered a district and roughly 3,800 residents voted on it; the proposal was rejected by 333 votes. He closed with a procedural promise: when Drescher &amp; Malecki finishes its report, <em>"certainly we'll be bringing it forward to the public."</em><sup class="fn">[1]</sup></p>
+</div>
+
+<div>
+<div class="pull">"Discussions of this nature must be grounded in accurate and viable information. Before bringing concerns to the media or attempting to shape public perception, it is important to ensure that the facts are fully understood and correctly presented."<span class="who">Supervisor Patrick Casilio, reading his Bee article<sup class="fn">[1]</sup></span></div>
+
+<div class="pull">"One of the reasons I read this whole thing out is Sean's doing billable hours. Are you charging him for all this time?"<span class="who">Casilio, mid-article, to town counsel Sean Hopkins<sup class="fn">[1]</sup></span></div>
+
+<div class="box">
+<div class="box-head">Casilio's Math</div>
+<ul>
+<li><strong>Municipal district:</strong> ~$320/yr — fewer services</li>
+<li><strong>Waste Management (current):</strong> $462/yr — recycling biweekly; bulk extra</li>
+<li><strong>Modern Disposal (current):</strong> $540/yr — weekly recycling + weekly bulk</li>
+<li><strong>Year-1 implementation:</strong> up to $4M — busts tax cap</li>
+<li><strong>STAR credit at risk:</strong> $900+ per household if cap is broken</li>
+<li><strong>2005 vote:</strong> proposal lost by 333 of ~3,800 ballots</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- ============ ALL RESOLUTIONS — EXPANDABLE ============ -->
+<div class="band">All Motions &mdash; Click Any Row to Expand</div>
+<p style="font-size:13px; color:var(--grey-deep); margin: 0 0 8px;">All votes were unanimous by roll call (5–0, councilmembers Altieri, Mitchnick, Sheer, DiCostanzo, plus Supervisor Casilio) <em>except</em> the two 8750 Main Street items, on which Casilio was recused and the four councilmembers passed both 4–0. Items in red are the headline actions detailed above.</p>
+
+<div class="res-list">
+
+  <details class="res flagged" open>
+    <summary>
+      <span class="res-num">1</span>
+      <span class="res-title"><strong>Sheridan Drive sidewalk bond</strong> — increase authorization to $2,015,466</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Five-page bond resolution amending the May 2025 authorization. Original 2022 NYSDOT estimate $4.31M; revised total $5,463,494 after April 30 bid opening. Town's share rises from $900,000 to $2,015,466 — a $1,115,466 increase. Five miles of sidewalk on both sides of Sheridan between Thompson/Main and Transit Road. Contract award expected at a future meeting.</p>
+      <p class="meta">Item 1 · 10:01 AM · Roll call</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">2</span>
+      <span class="res-title">Approve minutes of April 22 work session and town board meeting</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Routine approval of the prior meeting's minutes.</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">3</span>
+      <span class="res-title">Set June 5 bid date — removal of town leaf compost (~3,072 cubic yards)</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Sealed bids due 10:00 AM Friday June 5 at the town clerk's office. One bid price per cubic yard, loaded and hauled off-site by the successful bidder within 60 days. Insurance certification required. $100 bid bond.</p>
+      <p class="meta">Approximately 3,072 cubic yards · Sheridan Drive recycling area</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">4</span>
+      <span class="res-title">Court clerk training reimbursement — Mary Kelly &amp; Sally Moore, June 6 in Alma NY</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>8th Judicial District court clerks and magistrates association jury trial training. Wage compensation, tolls, and mileage reimbursed. No registration or seminar costs. Pool car available from town hall if desired.</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">5</span>
+      <span class="res-title">Highway School registration — Paul Englert &amp; Joe Diger, Ithaca College, June</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>$175 per person registration plus reasonable expenses per town travel policy. Use of town vehicle. Budget item.</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">6</span>
+      <span class="res-title">Two new highway laborers — Carter Walenzeck &amp; Michael Sion at $29.11/hour</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Both hired at the Blue Collar Unit 671 contract rate. Effective Tuesday May 26 subject to pre-employment paperwork. Brief moment from Casilio attempting to get the surname pronunciation right on the air.</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">7</span>
+      <span class="res-title">Park security to part-time seasonal for summer — four officers</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Vincent Akiki, Nicole Hay, Kurt Krauss, William O'Donnell bumped to part-time seasonal effective May 14 through September 30 to cover extended summer hours. Return to regular part-time October 1.</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">8</span>
+      <span class="res-title">Polling location lease — Clarence Senior Center, 4600 Thompson Road</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Lease agreement with Erie County Board of Elections to use the senior center for the June 23 primary and November 3 general election. Casilio noted ECBOE will not be paying a fee: <em>"We're doing it all for free."</em> Supervisor authorized to sign.</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">9</span>
+      <span class="res-title">Formalize Clarence Town Park Clubhouse Restoration Committee under Town Historian</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Committee that has effectively existed for ~20 years now formally constituted under direction of Joe McGreevy, town historian, effective May 13. Casilio: <em>"I don't want to say it's like a non-binary, but it's just an adjunct committee Joe McGreevy's going to watch over."</em></p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">10</span>
+      <span class="res-title">Surplus declaration — old Dell computers and LaserJet printers</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Equipment is no longer functional and Dell software is no longer supported by Microsoft. To be disposed of per state and local rules.</p>
+    </div>
+  </details>
+
+  <details class="res flagged">
+    <summary>
+      <span class="res-num">11</span>
+      <span class="res-title"><strong>Garbage district statement</strong> — supervisor reads Bee article into the record</span>
+      <span class="res-result">No vote</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Approximately 8 minutes of remarks read into the record by Supervisor Casilio responding to comments made at the April meeting. Drescher &amp; Malecki LLP retained for analysis. Detailed cost comparisons, STAR credit warning, and the 2005 vote history. Full analysis above in the lead section.</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">12</span>
+      <span class="res-title">Summer recreation staff — 8 attendants and 1 specialist promotion</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Recreation attendants at $17.7862/hour effective June 16: Allison Glaude, Emily Glaude, Marissa Spear, Sydney Spear, Matthew TenBrink, Sean TenBrink, Travis Yundsidch, Zachary Wallin. Plus Kelly Russon promoted from Recreation Specialist Part-Time to Recreation Specialist Seasonal at $21.4452/hour.</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">13</span>
+      <span class="res-title">2026 pool staff — 17 lifeguards and 2 clerks</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Senior lifeguard Miranda Edmundson at $22.0893/hr from May 18. Head lifeguards Austin Parlato, Ashley Podgorski, Eva Wolfley at $20.655/hr from June 1. Standard lifeguards at $19.8517/hr from June 1: Ava Omuso, Avery Collins, Matt Cox, Samantha Engler, Keegan Floss, Jacob Fulcher, Ian Garrin, Molly Kinnon, Jackson Corne, Carter Leach, Jake Overholt, Kyle Prezette. Clerks Julia Arroyo and Trevor Gallus at $18.7042/hr from June 8.</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">14</span>
+      <span class="res-title"><strong>Senior Planner promotion</strong> — Andrew Shaffer (#1 on civil service exam)</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Effective May 11 at $43.6987/hour. Per Bleuer's recommendation. Shaffer scored number one in the Town of Clarence on the civil service examination. Casilio's aside to Shaffer: <em>"You were nervous about that vote? You know, it could have went down."</em></p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">15</span>
+      <span class="res-title">Junior Planner intern — Ethan Parley, part-time seasonal</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Effective May 26 through August 7 at $22.945/hour. Subject to pre-employment requirements.</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">16</span>
+      <span class="res-title">Three board appointments — Hollow CCPB, Senior Board, Library Board</span>
+      <span class="res-result">Passed 5–0 (each)</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p><strong>Jack Merlon</strong> to the Clarence Hollow Community Character Protection Board, term to expire Dec 31, 2026. <strong>Rachel Seabird</strong> to the Clarence Senior Board, three-year term to expire Dec 31, 2028. <strong>Mary Quigley</strong> to the Clarence Library Board, filling the vacancy left by Don Ulzak, term to expire Dec 31, 2028.</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">17</span>
+      <span class="res-title">May 2026 proclaimed National Preservation Month in the Town of Clarence</span>
+      <span class="res-result">Proclaimed</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Recognition of the Town of Clarence Historic Preservation Commission. Read into the record by Councilman Cosmo Terry<sup class="fn">[*]</sup> as a statement, not a motion — no second taken.</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">18</span>
+      <span class="res-title">Fireworks permit — Town fireworks, June 29 at 10 PM</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Applicant: Town of Clarence (Bob Altieri). Rain date Tuesday June 30 at 10 PM. Subject to paperwork, fees, insurance, fire chief approvals on file in planning and zoning.</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">19</span>
+      <span class="res-title">Fireworks permit — Brookfield Country Club, July 3 at 10 PM</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Rain date Sunday July 5 at 10 PM. Same conditions as Item 18.</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">20</span>
+      <span class="res-title">Special event permit — Northwoods block party, September 12</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Applicant: Bobby C. Dorff. Saturday September 12, 4 PM to 7 PM. Located in the Marcos Hideaway cul-de-sac. Subject to memorandum of agreement, certificate of insurance naming the town as additional insured. Any food trucks at the event must be licensed in accordance with Chapter 147 of the town code.</p>
+    </div>
+  </details>
+
+  <details class="res flagged">
+    <summary>
+      <span class="res-num">21</span>
+      <span class="res-title"><strong>Public Hearing — 8750 Main rezoning</strong> (R-SF → TND)</span>
+      <span class="res-result">Approved 4–0 · Casilio recused</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Rezoning of 1.66 acres at the rear of the 9.6-acre parcel at 8750 Main Street (SBL 70.20-4-3.12) from Residential Single-Family to Traditional Neighborhood District, per planning board recommendation. Hearing held; three public speakers; closed; resolution approved on roll call. Full analysis above.</p>
+      <p class="meta">10:18 AM · Item 11 · Casilio recused · DiCostanzo presided</p>
+    </div>
+  </details>
+
+  <details class="res flagged">
+    <summary>
+      <span class="res-num">22</span>
+      <span class="res-title"><strong>Public Hearing — 8750 Main SEUP</strong> for 50 multifamily units</span>
+      <span class="res-result">Approved 4–0 · Casilio recused</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Special exception use permit for multifamily housing at the rear of the Samuel's Grande Manor property, including all 16 conditions of the planning board's concept-plan approval (April 1, 2026) and consistent with the approved architectural style. No public speakers. Approved on roll call.</p>
+      <p class="meta">10:34 AM · Item 12 · Casilio recused · DiCostanzo presided</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">23</span>
+      <span class="res-title">Recreation facility applications — Legion Hall, Clubhouse, Nature Center Lodge</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>Standard recreation facility use applications. Late addition: an HOA meeting for Spalding Greens.</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">24</span>
+      <span class="res-title">Bill pay — April 23, 2026 ($439,359.81)</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>General fund $204,320.40 · Highway $165,177.63 · Water $1,372.25 · Central Alarm $231.09 · Fire Protection $4,698.66 · Drainage $419.04 · Lighting $8.99 · Sewer $508.45 · Capital $62,623.30.</p>
+    </div>
+  </details>
+
+  <details class="res">
+    <summary>
+      <span class="res-num">25</span>
+      <span class="res-title">Bill pay — May 7, 2026 ($361,425.22)</span>
+      <span class="res-result">Passed 5–0</span>
+      <span class="res-toggle"></span>
+    </summary>
+    <div class="res-detail">
+      <p>General fund $182,017.35 · Highway $74,600.16 · Drainage $1,679.58 · Sewer $200 · Capital $101,628.13 · Special Revenue $1,300.</p>
+    </div>
+  </details>
+
+</div>
+
+<!-- ============ NUMBERS ============ -->
+<div class="band">By the Numbers</div>
+<div class="nums">
+  <div class="num-cell"><span class="n">$5.46M</span><span class="lbl">New Sheridan Drive sidewalk project total</span></div>
+  <div class="num-cell"><span class="n">+$1.115M</span><span class="lbl">Cost overrun vs. 2022 estimate</span></div>
+  <div class="num-cell"><span class="n">$2.015M</span><span class="lbl">New bond authorization (up from $900K)</span></div>
+  <div class="num-cell"><span class="n">50</span><span class="lbl">Multifamily units approved at 8750 Main</span></div>
+</div>
+<div class="nums">
+  <div class="num-cell"><span class="n">4</span><span class="lbl">Design iterations since 2021 (40→24→20→50)</span></div>
+  <div class="num-cell"><span class="n">$900</span><span class="lbl">Maximum STAR credit at risk if cap is busted</span></div>
+  <div class="num-cell"><span class="n">~$4M</span><span class="lbl">Projected year-1 cost of garbage district</span></div>
+  <div class="num-cell"><span class="n">333</span><span class="lbl">Margin of defeat in 2005 garbage-district vote</span></div>
+</div>
+
+<!-- ============ EDITOR'S NOTE ============ -->
+<div class="box">
+<div class="box-head">Editor's Note</div>
+<p>This is the first Clarence Town Board meeting captured through the WNY Listening Post pipeline. The Town of Clarence livestreams its meetings on YouTube but does not maintain a back archive, so the capture must run live. The 8:30 AM Wednesday work session that precedes the regular meeting is not broadcast; this brief reflects only what aired between roughly 10:00 AM and 11:06 AM. Work session items will be reflected in future briefs only if and when they appear as formal motions at a regular Town Board meeting. Roll-call detail is preserved in the source transcript. Names marked with <sup class="fn">[*]</sup> have been silently corrected from Whisper's audio-to-text rendering — most notably "Bleuer" (transcript: "Blower") and "Drescher &amp; Malecki" (transcript variants: "Dresser Malaki," "Dresser Molecular"). Councilmember surnames are rendered as the audio resolves and should be verified against the official Clarence Town Clerk records before quoting.</p>
+</div>
+
+<!-- ============ OVERHEARD ============ -->
+<div class="box">
+<div class="box-head">Overheard</div>
+<ul>
+<li>"I'm recusing myself from it because I own the property next door to it." — <em>Supervisor Casilio opening item 11</em><sup class="fn">[1]</sup></li>
+<li>"We'd be a little bit reluctant to clear the vegetation on the back of the site and replace that with a privacy fence." — <em>Sean Hopkins declining the school district's privacy-fence request</em><sup class="fn">[1]</sup></li>
+<li>"You're going to save $100 on your garbage refuge, but lose your STAR credit of $900." — <em>Casilio's fiscal warning</em><sup class="fn">[1]</sup></li>
+<li>"We're doing it all for free." — <em>Casilio on the Senior Center polling lease, after suggesting ECBOE pays $5,000</em><sup class="fn">[1]</sup></li>
+<li>"You were nervous about that vote? You know, it could have went down." — <em>Casilio to Andrew Shaffer after the 5-0 promotion to Senior Planner</em><sup class="fn">[1]</sup></li>
+<li>"Larry and I have a problem with quicksand don't wait from the Tarzan movie — so they might end up chasing a pickleball and we may never see them again." — <em>Casilio on Songer Park readiness</em><sup class="fn">[1]</sup></li>
+<li>"He's been a great great great mentor for me… I am now, because everybody's retired, the senior supervisor of our group of supervisors. I don't know if that's a good thing or a bad thing." — <em>Casilio closing the meeting in honor of retiring Hamburg Supervisor Joe Eminger</em><sup class="fn">[1]</sup></li>
+</ul>
+</div>
+
+<!-- ============ SOURCES ============ -->
+<div class="sources">
+<div class="sources-head">Sources</div>
+[1] clarence_tb_20260513_transcript.txt &mdash; Town of Clarence Town Board Regular Meeting, Wednesday May 13, 2026 (65.9 minutes captured; meeting content from minute 18:00 through adjournment at approximately 1:05:44; first 18 minutes are pre-meeting silence). faster-whisper "medium" model, language confidence p=1.00, 575 transcript segments. Source MP3: clarence_tb_20260513.mp3 (67.25 MB). Captured live from youtube.com/@ClarenceNY via yt-dlp with --live-from-start and --wait-for-video flags; transcribed by scheduled Windows Task Scheduler workflow.<br>
+[*] Indicates a proper noun silently corrected from a likely Whisper homophone error. Verify against the official Town Clerk's record before quoting in any formal communication.
+</div>
+
+</div>
+
+<div class="foot">
+  <div>The WNY Listening Post &middot; Special Edition &middot; Compiled 2026-05-13</div>
+  <div class="disclaim">Compiled from public meeting transcripts; transcriptions are AI-generated and may contain errors. Names, dates, dollar amounts, and details should be verified before action.</div>
+</div>
+
+</div>
+
+</div> <!-- /.site-shell -->
+
+
+<script>
+(function(){
+  var triggers = document.querySelectorAll('.wnylp-nav .nav-trigger');
+  triggers.forEach(function(t){
+    t.addEventListener('click', function(e){
+      e.stopPropagation();
+      var li = t.parentElement;
+      // close siblings at the same level
+      var parentUL = li.parentElement;
+      parentUL.querySelectorAll(':scope > li.open').forEach(function(sib){ if (sib !== li) sib.classList.remove('open'); });
+      // toggle this one
+      li.classList.toggle('open');
+      t.setAttribute('aria-expanded', li.classList.contains('open') ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', function(){
+    document.querySelectorAll('.wnylp-nav .open').forEach(function(el){
+      el.classList.remove('open');
+      var b = el.querySelector(':scope > .nav-trigger');
+      if (b) b.setAttribute('aria-expanded','false');
+    });
+  });
+  // mark current page
+  var path = location.pathname;
+  document.querySelectorAll('.wnylp-nav a[href]').forEach(function(a){
+    var href = a.getAttribute('href');
+    if (!href || href === '#') return;
+    var ap = href.split('#')[0];
+    if (ap && (path === ap || path.endsWith(ap.replace(/^https?:\/\/[^\/]+/, '')))) {
+      var li = a.closest('li');
+      if (li && li.parentElement.classList.contains('nav-l1')) li.classList.add('current');
+    }
+  });
+})();
+</script>
+
+</body>
+</html>
