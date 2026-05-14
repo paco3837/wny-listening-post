@@ -72,6 +72,57 @@
   /* Footer */
   .footer { background:#000; color:#bbb; padding: 12px 22px; font-family:'Oswald', Arial, sans-serif; font-size: 11px; text-transform: uppercase; letter-spacing: 1px; }
   .footer .disclaimer { color:#888; font-style: italic; text-transform: none; letter-spacing: 0; font-family: Georgia, serif; margin-top: 4px; font-size: 11px; }
+
+/* === WNY LISTENING POST SITE NAV === */
+.wnylp-nav { background:#000; border-top:4px solid #D40000; border-bottom:2px solid #D40000; font-family:'Oswald',Arial,sans-serif; position:relative; z-index:100; }
+.wnylp-nav .nav-inner { max-width:1180px; margin:0 auto; padding:0; }
+.wnylp-nav ul { list-style:none; margin:0; padding:0; }
+.wnylp-nav .nav-l1 { display:flex; flex-wrap:wrap; }
+.wnylp-nav .nav-l1 > li { position:relative; }
+.wnylp-nav .nav-l1 > li > a, .wnylp-nav .nav-l1 > li > .nav-trigger {
+  display:block; padding:13px 22px; color:#fff; text-transform:uppercase;
+  font-weight:700; letter-spacing:2px; font-size:13px; text-decoration:none; cursor:pointer;
+  background:transparent; border:0; outline:none;
+}
+.wnylp-nav .nav-l1 > li > a:hover, .wnylp-nav .nav-l1 > li > .nav-trigger:hover,
+.wnylp-nav .nav-l1 > li:hover > a, .wnylp-nav .nav-l1 > li:hover > .nav-trigger,
+.wnylp-nav .nav-l1 > li.open > a, .wnylp-nav .nav-l1 > li.open > .nav-trigger { background:#D40000; color:#fff; }
+.wnylp-nav .nav-l1 > li.current > a { background:#D40000; }
+.wnylp-nav .nav-l1 > li.has-sub > .nav-trigger::after { content:" \25BE"; font-size:10px; opacity:.7; }
+.wnylp-nav .nav-l2 {
+  display:none; position:absolute; top:100%; left:0; min-width:260px;
+  background:#1a1a1a; border-top:2px solid #D40000; box-shadow:0 6px 14px rgba(0,0,0,.45);
+}
+.wnylp-nav .nav-l1 > li:hover > .nav-l2,
+.wnylp-nav .nav-l1 > li.open > .nav-l2 { display:block; }
+.wnylp-nav .nav-l2 > li { position:relative; }
+.wnylp-nav .nav-l2 > li > a, .wnylp-nav .nav-l2 > li > .nav-trigger {
+  display:block; padding:11px 18px; color:#fff; text-transform:uppercase;
+  font-weight:600; letter-spacing:1.5px; font-size:12px; text-decoration:none; cursor:pointer;
+  background:transparent; border:0; outline:none; width:100%; text-align:left;
+}
+.wnylp-nav .nav-l2 > li:hover > a, .wnylp-nav .nav-l2 > li:hover > .nav-trigger,
+.wnylp-nav .nav-l2 > li.open > a, .wnylp-nav .nav-l2 > li.open > .nav-trigger { background:#D40000; }
+.wnylp-nav .nav-l2 > li.has-sub > .nav-trigger::after { content:"\00A0\25B8"; font-size:10px; opacity:.7; float:right; margin-left:10px; }
+.wnylp-nav .nav-l3 {
+  display:none; position:absolute; top:0; left:100%; min-width:300px;
+  background:#1a1a1a; border-left:2px solid #D40000; box-shadow:6px 6px 14px rgba(0,0,0,.45);
+}
+.wnylp-nav .nav-l2 > li:hover > .nav-l3,
+.wnylp-nav .nav-l2 > li.open > .nav-l3 { display:block; }
+.wnylp-nav .nav-l3 > li > a {
+  display:block; padding:10px 16px; color:#fff; font-size:13px; text-decoration:none;
+  font-family:Georgia,serif; line-height:1.35;
+}
+.wnylp-nav .nav-l3 > li > a:hover { background:#D40000; }
+.wnylp-nav .nav-l3 > li > a .nav-meta { display:block; font-family:'Oswald',sans-serif; font-size:10px; text-transform:uppercase; letter-spacing:1px; opacity:.7; margin-top:2px; }
+@media (max-width: 720px) {
+  .wnylp-nav .nav-l1 { flex-direction:column; }
+  .wnylp-nav .nav-l1 > li > a, .wnylp-nav .nav-l1 > li > .nav-trigger { padding:11px 18px; }
+  .wnylp-nav .nav-l2, .wnylp-nav .nav-l3 { position:static; min-width:0; box-shadow:none; border-left:0; border-top:1px solid #333; }
+  .wnylp-nav .nav-l1 > li.has-sub > .nav-trigger::after { float:right; }
+}
+
 </style>
 </head>
 <body>
@@ -86,6 +137,27 @@
     <span class="edition">P.M. Edition &middot; Window 07:00 &rarr; 15:00</span>
   </div>
   <div class="tagline">Eyes on the wires. Ears on the radio. Eight hours of Western New York, fully reported.</div>
+
+
+<nav class="wnylp-nav" aria-label="Site navigation">
+  <div class="nav-inner">
+    <ul class="nav-l1">
+      <li><a href="/wny-listening-post/">Current Headlines</a></li>
+      <li class="has-sub">
+        <button type="button" class="nav-trigger" aria-haspopup="true" aria-expanded="false">Local Government News</button>
+        <ul class="nav-l2">
+          <li class="has-sub">
+            <button type="button" class="nav-trigger" aria-haspopup="true" aria-expanded="false">Clarence</button>
+            <ul class="nav-l3">
+              <li><a href="/wny-listening-post/local-government/clarence_tb_2026-05-13.html">Town Board<span class="nav-meta">Regular Meeting &middot; May 13, 2026</span></a></li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </div>
+</nav>
+
 
   <!-- WEATHER STRIP -->
   <div class="wx">
@@ -386,6 +458,43 @@
   <ul><li><a href="editions/wny-listening-post_2026-05-13_AM.html"><span class="wnylp-archive-date">Wed, May 13, 2026</span><span class="wnylp-archive-pill wnylp-archive-am">AM</span></a></li><li><a href="editions/wny-listening-post_2026-05-12_PM.html"><span class="wnylp-archive-date">Tue, May 12, 2026</span><span class="wnylp-archive-pill wnylp-archive-pm">PM</span></a></li><li><a href="editions/wny-listening-post_2026-05-12_AM.html"><span class="wnylp-archive-date">Tue, May 12, 2026</span><span class="wnylp-archive-pill wnylp-archive-am">AM</span></a></li><li><a href="editions/wny-listening-post_2026-05-11_PM.html"><span class="wnylp-archive-date">Mon, May 11, 2026</span><span class="wnylp-archive-pill wnylp-archive-pm">PM</span></a></li><li><a href="editions/wny-listening-post_2026-05-11_AM.html"><span class="wnylp-archive-date">Mon, May 11, 2026</span><span class="wnylp-archive-pill wnylp-archive-am">AM</span></a></li><li><a href="editions/wny-listening-post_2026-05-10_PM.html"><span class="wnylp-archive-date">Sun, May 10, 2026</span><span class="wnylp-archive-pill wnylp-archive-pm">PM</span></a></li><li><a href="editions/wny-listening-post_2026-05-10_AM.html"><span class="wnylp-archive-date">Sun, May 10, 2026</span><span class="wnylp-archive-pill wnylp-archive-am">AM</span></a></li><li><a href="editions/wny-listening-post_2026-05-09_PM.html"><span class="wnylp-archive-date">Sat, May 9, 2026</span><span class="wnylp-archive-pill wnylp-archive-pm">PM</span></a></li><li><a href="editions/wny-listening-post_2026-05-09_AM.html"><span class="wnylp-archive-date">Sat, May 9, 2026</span><span class="wnylp-archive-pill wnylp-archive-am">AM</span></a></li><li><a href="editions/wny-listening-post_2026-05-08_AM.html"><span class="wnylp-archive-date">Fri, May 8, 2026</span><span class="wnylp-archive-pill wnylp-archive-am">AM</span></a></li></ul>
   <div class="wnylp-archive-meta">10 prior editions archived &middot; Last refreshed 2026-05-13 19:21 UTC</div>
 </div>
+
+
+<script>
+(function(){
+  var triggers = document.querySelectorAll('.wnylp-nav .nav-trigger');
+  triggers.forEach(function(t){
+    t.addEventListener('click', function(e){
+      e.stopPropagation();
+      var li = t.parentElement;
+      // close siblings at the same level
+      var parentUL = li.parentElement;
+      parentUL.querySelectorAll(':scope > li.open').forEach(function(sib){ if (sib !== li) sib.classList.remove('open'); });
+      // toggle this one
+      li.classList.toggle('open');
+      t.setAttribute('aria-expanded', li.classList.contains('open') ? 'true' : 'false');
+    });
+  });
+  document.addEventListener('click', function(){
+    document.querySelectorAll('.wnylp-nav .open').forEach(function(el){
+      el.classList.remove('open');
+      var b = el.querySelector(':scope > .nav-trigger');
+      if (b) b.setAttribute('aria-expanded','false');
+    });
+  });
+  // mark current page
+  var path = location.pathname;
+  document.querySelectorAll('.wnylp-nav a[href]').forEach(function(a){
+    var href = a.getAttribute('href');
+    if (!href || href === '#') return;
+    var ap = href.split('#')[0];
+    if (ap && (path === ap || path.endsWith(ap.replace(/^https?:\/\/[^\/]+/, '')))) {
+      var li = a.closest('li');
+      if (li && li.parentElement.classList.contains('nav-l1')) li.classList.add('current');
+    }
+  });
+})();
+</script>
 
 </body>
 </html>
