@@ -178,6 +178,13 @@
 /* Inside .site-shell, let .page fill the full width */
 .site-shell .page { max-width:none; margin:0; border:0; box-shadow:none; }
 /* Body background: the gray frame around the printed page is preserved */
+
+/* === WNY LISTENING POST WEATHER STRIP (site-wide) === */
+.wnylp-wx { background:#1a1a1a; color:#f0f0f0; font-family:Arial,sans-serif; font-size:13px; padding:8px 16px; display:flex; justify-content:space-around; border-bottom:1px solid #D40000; flex-wrap:wrap; gap:4px 0; }
+.wnylp-wx strong { color:#D40000; }
+.wnylp-wx .sep { color:#444; }
+@media (max-width:720px) { .wnylp-wx { font-size:11px; padding:6px 10px; gap:2px 0; } }
+
 </style>
 </head>
 <body>
@@ -213,6 +220,15 @@
     </ul>
   </div>
 </nav>
+
+<div class="wnylp-wx">
+  <span><strong>THIS AFTERNOON</strong>&nbsp;&nbsp;62&deg; / 42&deg;&nbsp;&nbsp;&#9729;&#65039; Mostly Cloudy</span>
+    <span class="sep">&#9474;</span>
+    <span><strong>THU</strong>&nbsp;&nbsp;53&deg; / 44&deg;&nbsp;&nbsp;&#127783;&#65039; Chance Rain Showers</span>
+    <span class="sep">&#9474;</span>
+    <span><strong>FRI</strong>&nbsp;&nbsp;64&deg; / 49&deg;&nbsp;&nbsp;&#127780;&#65039; Mostly Sunny</span>
+</div>
+
 
 <div class="page">
 
