@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>The WNY Listening Post — May 18, 2026 A.M. Edition</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Bebas+Neue&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; }
+  html, body { margin: 0; padding: 0; background: #c9c4bb; }
+  body {
+    font-family: Georgia, "Times New Roman", serif;
+    color: #000;
+    line-height: 1.45;
+  }
+  .paper {
+    max-width: 1180px;
+    margin: 0 auto;
+    background: #fff;
+    box-shadow: 0 0 24px rgba(0,0,0,.25);
+  }
+  /* ---------- Masthead ---------- */
+  .masthead-logo {
+    background: #D40000;
+    color: #fff;
+    padding: 18px 28px 14px 28px;
+    border-bottom: 4px solid #000;
+  }
+  .masthead-logo h1 {
+    font-family: 'Anton', 'Bebas Neue', Impact, 'Arial Black', sans-serif;
+    font-style: italic;
+    font-size: 88px;
+    line-height: .92;
+    letter-spacing: 1px;
+    margin: 0;
+    text-transform: uppercase;
+    text-shadow: 2px 2px 0 #000;
+  }
+  .masthead-sub {
+    background: #000;
+    color: #fff;
+    font-family: 'Oswald', Arial, sans-serif;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 8px 28px;
+    font-size: 14px;
+    text-transform: uppercase;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+  .masthead-sub .right { color: #fff; opacity: .85; }
+  .tagline {
+    background: #fff;
+    color: #444;
+    font-style: italic;
+    padding: 8px 28px;
+    border-bottom: 2px solid #000;
+    font-size: 14px;
+  }
+  /* ---------- Weather strip ---------- */
+  .weather {
+    background: #1a1a1a;
+    color: #f0f0f0;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #D40000;
+    flex-wrap: wrap;
+  }
+  .weather strong { color: #c41e1e; }
+  .weather .sep { color: #444; }
+  /* ---------- Layout grid ---------- */
+  .grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 0;
+    padding: 0;
+  }
+  .main-col { padding: 22px 26px; border-right: 2px solid #000; }
+  .side-col { padding: 22px 22px; background: #f4f1ec; }
+  /* ---------- Section headers ---------- */
+  .section-head {
+    background: #000;
+    color: #fff;
+    border-left: 8px solid #D40000;
+    padding: 8px 14px;
+    font-family: 'Anton', 'Bebas Neue', Impact, 'Arial Black', sans-serif;
+    font-size: 26px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 22px 0 14px 0;
+  }
+  .section-head:first-child { margin-top: 0; }
+  /* ---------- Editor's Note ---------- */
+  .box {
+    background: #fff;
+    border-top: 6px solid #D40000;
+    padding: 14px 16px 16px 16px;
+    margin-bottom: 18px;
+    box-shadow: 0 1px 0 rgba(0,0,0,.08);
+  }
+  .box h3 {
+    font-family: 'Anton', 'Bebas Neue', Impact, 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 22px;
+    margin: 0 0 8px 0;
+    color: #000;
+  }
+  .box p { margin: 0 0 8px 0; font-size: 15px; line-height: 1.5; }
+  .box p:last-child { margin-bottom: 0; }
+  /* ---------- By the Numbers ---------- */
+  .bythenumbers .summary {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    border-bottom: 1px dotted #888;
+    padding-bottom: 8px;
+  }
+  .bythenumbers .summary div { margin: 3px 0; display: flex; justify-content: space-between; }
+  .bythenumbers .summary div span:last-child { font-weight: 700; color: #D40000; }
+  .bythenumbers table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 12px;
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 13px;
+  }
+  .bythenumbers caption {
+    text-align: left;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 12px;
+    padding: 4px 0;
+    color: #000;
+    border-bottom: 2px solid #000;
+  }
+  .bythenumbers td {
+    padding: 4px 2px;
+    border-bottom: 1px dotted #aaa;
+  }
+  .bythenumbers td.val { text-align: right; font-weight: 700; }
+  .empty-note {
+    font-style: italic;
+    color: #666;
+    font-family: Georgia, serif;
+    font-size: 13px;
+    padding: 6px 0;
+  }
+  /* ---------- Quiet-day lead ---------- */
+  .quiet-lead {
+    border-top: 4px double #000;
+    border-bottom: 4px double #000;
+    padding: 24px 16px 28px 16px;
+    margin: 14px 0 22px 0;
+    text-align: center;
+  }
+  .quiet-lead .kicker {
+    font-family: 'Oswald', Arial, sans-serif;
+    font-weight: 700;
+    color: #D40000;
+    letter-spacing: 3px;
+    font-size: 13px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .quiet-lead h2 {
+    font-family: 'Anton', 'Bebas Neue', Impact, 'Arial Black', sans-serif;
+    font-size: 54px;
+    line-height: .95;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+    letter-spacing: 1px;
+  }
+  .quiet-lead .subhead {
+    font-style: italic;
+    font-size: 16px;
+    color: #333;
+    margin: 4px auto 14px auto;
+    max-width: 560px;
+  }
+  .quiet-lead .body-lede {
+    text-align: left;
+    font-size: 15px;
+    line-height: 1.55;
+    max-width: 620px;
+    margin: 0 auto;
+  }
+  .quiet-lead .body-lede p { margin: 0 0 10px 0; }
+  .quiet-lead .body-lede p:last-child { margin-bottom: 0; }
+  .dropcap::first-letter {
+    font-family: 'Anton', 'Bebas Neue', Impact, 'Arial Black', sans-serif;
+    font-size: 56px;
+    float: left;
+    line-height: .9;
+    padding: 4px 8px 0 0;
+    color: #D40000;
+  }
+  /* ---------- Sources ---------- */
+  .sources {
+    background: #f8f6f1;
+    border-top: 3px solid #000;
+    border-bottom: 3px solid #000;
+    padding: 14px 26px;
+    font-family: "Consolas", "Monaco", monospace;
+    font-size: 11px;
+    line-height: 1.55;
+    color: #222;
+  }
+  .sources h3 {
+    font-family: 'Anton', 'Bebas Neue', Impact, 'Arial Black', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 18px;
+    margin: 0 0 8px 0;
+    color: #000;
+    font-family: 'Oswald', Arial, sans-serif;
+  }
+  /* ---------- Footer ---------- */
+  .footer {
+    background: #000;
+    color: #ccc;
+    padding: 14px 26px 18px 26px;
+    font-family: 'Oswald', Arial, sans-serif;
+    font-size: 12px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .footer p { margin: 4px 0; }
+  .footer .disclaimer {
+    font-style: italic;
+    text-transform: none;
+    letter-spacing: 0;
+    color: #888;
+    font-family: Georgia, serif;
+    font-size: 12px;
+    margin-top: 6px;
+  }
+  @media (max-width: 760px) {
+    .grid { grid-template-columns: 1fr; }
+    .main-col { border-right: none; border-bottom: 2px solid #000; }
+    .masthead-logo h1 { font-size: 54px; }
+  }
+</style>
+</head>
+<body>
+<div class="paper">
+
+  <!-- ===================== MASTHEAD ===================== -->
+  <div class="masthead-logo">
+    <h1>The WNY Listening Post</h1>
+  </div>
+  <div class="masthead-sub">
+    <span>Vol. I &middot; No. 9 &middot; Monday, May 18, 2026 &middot; A.M. Edition</span>
+    <span class="right">Window 15:00 &rarr; 07:00</span>
+  </div>
+  <div class="tagline">
+    Eyes on the wires. Ears to the radio. Sixteen hours, fully reported.
+  </div>
+
+  <!-- ===================== WEATHER ===================== -->
+  <div class="weather">
+    <span><strong>OVERNIGHT</strong>&nbsp;&nbsp;Low 65&deg;&nbsp;&nbsp;&#9729;&#65039; Mostly Cloudy</span>
+    <span class="sep">&#9474;</span>
+    <span><strong>MON</strong>&nbsp;&nbsp;86&deg; / 67&deg;&nbsp;&nbsp;&#127780;&#65039; Mostly Sunny</span>
+    <span class="sep">&#9474;</span>
+    <span><strong>TUE</strong>&nbsp;&nbsp;84&deg; / 56&deg;&nbsp;&nbsp;&#127780;&#65039; Mostly Sunny</span>
+  </div>
+
+  <!-- ===================== BODY ===================== -->
+  <div class="grid">
+
+    <!-- ============ MAIN COLUMN ============ -->
+    <div class="main-col">
+
+      <div class="quiet-lead">
+        <div class="kicker">A.M. Edition &middot; Sixteen-Hour Window</div>
+        <h2>The Radios Took the Night Off</h2>
+        <div class="subhead">Zero scanner segments captured between 3:00 p.m. Sunday and 7:00 a.m. Monday &mdash; the quietest window of the run so far.</div>
+        <div class="body-lede">
+          <p class="dropcap">The WNY Listening Post pipeline returned no audio segments for this morning&rsquo;s edition. Across all monitored systems &mdash; municipal police and fire, Erie and Niagara County dispatch, BNIA airport ops, hotel shuttles, freight rail, and the trunk-radio business channels &mdash; the recorders captured nothing usable in the sixteen-hour window. That can happen when an SDR drops a feed, when ProScan loses its squelch lock overnight, or when conditions are genuinely that quiet on a Sunday-to-Monday rollover; the export itself reports zero segments and zero active systems.</p>
+          <p>Because nothing was captured, there is no Tier Alpha sweep, no Tier 1 property activity, no Around the Neighborhood, no Overheard, and no Regional Blotter to report. The previous edition (yesterday&rsquo;s P.M. brief, May 17, 2026) is on file in the archive; with no transcripts to cross-reference, no follow-up Updates section is generated either.</p>
+          <p>The next edition will arrive on the regular schedule. If subsequent windows continue to come back empty, that is itself worth investigating &mdash; the recording chain, not the city, is most likely the cause.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- ============ SIDEBAR ============ -->
+    <div class="side-col">
+
+      <div class="box">
+        <h3>Editor&rsquo;s Note</h3>
+        <p>Today&rsquo;s sixteen-hour window &mdash; Sunday afternoon through Monday daybreak &mdash; produced zero scanner segments across every monitored system. That is unusual: even slow overnights normally surface a handful of EMS pages or a stray BNIA ramp call.</p>
+        <p>With no transcripts to read, there are no headlines to write. The most likely explanation is a pipeline interruption rather than a regionwide quiet spell, and the recording stack is worth a glance before the P.M. run.</p>
+        <p>No prior-edition follow-ups were possible without new segments to test against; the Updates section is omitted accordingly.</p>
+      </div>
+
+      <div class="box bythenumbers">
+        <h3>By the Numbers</h3>
+        <div class="summary">
+          <div><span>Total segments</span><span>0</span></div>
+          <div><span>Active systems</span><span>0</span></div>
+          <div><span>Busiest hour</span><span>&mdash;</span></div>
+          <div><span>Tier Alpha hits</span><span>0</span></div>
+          <div><span>Tier 1 hits</span><span>0</span></div>
+          <div><span>Regional Breaking</span><span>0</span></div>
+          <div><span>Updates</span><span>0</span></div>
+        </div>
+        <table>
+          <caption>By Agency</caption>
+          <tbody>
+            <tr><td colspan="2" class="empty-note">No segments captured in window.</td></tr>
+          </tbody>
+        </table>
+        <table>
+          <caption>By Area</caption>
+          <tbody>
+            <tr><td colspan="2" class="empty-note">No segments captured in window.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===================== SOURCES ===================== -->
+  <div class="sources">
+    <h3>Sources &mdash; Audio Files Cited</h3>
+    <div>No audio segments were captured in this window. Source list intentionally empty.</div>
+    <div>Pipeline export reviewed: My Drive/Scanner/daily/wny-listening-post_2026-05-18_AM.md (0 segments, 0 active systems).</div>
+  </div>
+
+  <!-- ===================== FOOTER ===================== -->
+  <div class="footer">
+    <p>Generated Monday, May 18, 2026 &middot; A.M. Edition</p>
+    <p>Compiled from public radio scanner traffic via the WNY Listening Post automated pipeline.</p>
+    <p class="disclaimer">Transcriptions are AI-generated and may contain errors. Names and details should be verified before action.</p>
+  </div>
+
+</div>
+</body>
+</html>
